@@ -1,0 +1,725 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		761912142133C65C00DFA118 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761912132133C65C00DFA118 /* AppDelegate.swift */; };
+		7619121B2133C65C00DFA118 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 761912192133C65C00DFA118 /* Main.storyboard */; };
+		7619121D2133C65E00DFA118 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7619121C2133C65E00DFA118 /* Assets.xcassets */; };
+		761912202133C65E00DFA118 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7619121E2133C65E00DFA118 /* LaunchScreen.storyboard */; };
+		761912282133CF9B00DFA118 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 761912272133CF9B00DFA118 /* GoogleService-Info.plist */; };
+		7619122B2133D13400DFA118 /* EventListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7619122A2133D13400DFA118 /* EventListCell.swift */; };
+		7619122E2133D17600DFA118 /* EventListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7619122D2133D17600DFA118 /* EventListVC.swift */; };
+		761912362133D29D00DFA118 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761912352133D29D00DFA118 /* NotificationService.swift */; };
+		7619123A2133D29D00DFA118 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 761912332133D29D00DFA118 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7635FCC62133F429000ACCB1 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7635FCC52133F429000ACCB1 /* Animations.swift */; };
+		7635FCC82133F4B2000ACCB1 /* RoundShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7635FCC72133F4B2000ACCB1 /* RoundShadowView.swift */; };
+		7635FCCB2133F6E5000ACCB1 /* ActaDisplay.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7635FCCA2133F6E5000ACCB1 /* ActaDisplay.otf */; };
+		7635FCCD2133FD27000ACCB1 /* EventDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7635FCCC2133FD27000ACCB1 /* EventDetailVC.swift */; };
+		7635FCCF2133FEF7000ACCB1 /* LocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7635FCCE2133FEF7000ACCB1 /* LocalData.swift */; };
+		7635FCD12134084C000ACCB1 /* logoSkiClub.png in Resources */ = {isa = PBXBuildFile; fileRef = 7635FCD02134084B000ACCB1 /* logoSkiClub.png */; };
+		763DB3CC216B94D200B8EC5E /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 763DB3CB216B94D200B8EC5E /* Event.storyboard */; };
+		767466B1213BDF1400BAA81E /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 767466B0213BDF1300BAA81E /* placeholder.png */; };
+		A29E73EAC5620F25628DC0DD /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E8695AB2FFCDEA7AC727609 /* Pods_OneSignalNotificationServiceExtension.framework */; };
+		F0E7987A4C461447E499B38E /* Pods_Ski_Club.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 321AAF1C7E9127F2F1EC314A /* Pods_Ski_Club.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		761912382133D29D00DFA118 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 761912082133C65C00DFA118 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 761912322133D29D00DFA118;
+			remoteInfo = OneSignalNotificationServiceExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7619123E2133D29D00DFA118 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				7619123A2133D29D00DFA118 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		321AAF1C7E9127F2F1EC314A /* Pods_Ski_Club.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ski_Club.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45489F28E5E83038231F2C37 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		703008A7484295F637CBBD7F /* Pods-Ski Club.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ski Club.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ski Club/Pods-Ski Club.release.xcconfig"; sourceTree = "<group>"; };
+		761912102133C65C00DFA118 /* Ski Club.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ski Club.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		761912132133C65C00DFA118 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7619121A2133C65C00DFA118 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7619121C2133C65E00DFA118 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7619121F2133C65E00DFA118 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		761912212133C65E00DFA118 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		761912272133CF9B00DFA118 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7619122A2133D13400DFA118 /* EventListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListCell.swift; sourceTree = "<group>"; };
+		7619122D2133D17600DFA118 /* EventListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListVC.swift; sourceTree = "<group>"; };
+		761912332133D29D00DFA118 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		761912352133D29D00DFA118 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		761912372133D29D00DFA118 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7635FCC22133EFF5000ACCB1 /* Ski Club.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Ski Club.entitlements"; sourceTree = "<group>"; };
+		7635FCC52133F429000ACCB1 /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
+		7635FCC72133F4B2000ACCB1 /* RoundShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundShadowView.swift; sourceTree = "<group>"; };
+		7635FCCA2133F6E5000ACCB1 /* ActaDisplay.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ActaDisplay.otf; sourceTree = "<group>"; };
+		7635FCCC2133FD27000ACCB1 /* EventDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailVC.swift; sourceTree = "<group>"; };
+		7635FCCE2133FEF7000ACCB1 /* LocalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalData.swift; sourceTree = "<group>"; };
+		7635FCD02134084B000ACCB1 /* logoSkiClub.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoSkiClub.png; sourceTree = "<group>"; };
+		763DB3CB216B94D200B8EC5E /* Event.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
+		767466B0213BDF1300BAA81E /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
+		81E78B6726E8559A38C19BB0 /* Pods-Ski Club.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ski Club.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ski Club/Pods-Ski Club.debug.xcconfig"; sourceTree = "<group>"; };
+		8E8695AB2FFCDEA7AC727609 /* Pods_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1200DDFAEEAB13B2F404525 /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7619120D2133C65C00DFA118 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0E7987A4C461447E499B38E /* Pods_Ski_Club.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		761912302133D29D00DFA118 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A29E73EAC5620F25628DC0DD /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		48E8AFDAA1C3FA9183C32F34 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				81E78B6726E8559A38C19BB0 /* Pods-Ski Club.debug.xcconfig */,
+				703008A7484295F637CBBD7F /* Pods-Ski Club.release.xcconfig */,
+				45489F28E5E83038231F2C37 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */,
+				A1200DDFAEEAB13B2F404525 /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		76050A722174DEF2009A5F5E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7635FCCE2133FEF7000ACCB1 /* LocalData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		76050A732174DF57009A5F5E /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				7635FCC92133F58B000ACCB1 /* Fontes */,
+				7635FCD02134084B000ACCB1 /* logoSkiClub.png */,
+				767466B0213BDF1300BAA81E /* placeholder.png */,
+			);
+			path = Media;
+			sourceTree = "<group>";
+		};
+		76050A742174DF9A009A5F5E /* Default */ = {
+			isa = PBXGroup;
+			children = (
+				7619122D2133D17600DFA118 /* EventListVC.swift */,
+				7635FCCC2133FD27000ACCB1 /* EventDetailVC.swift */,
+			);
+			path = Default;
+			sourceTree = "<group>";
+		};
+		76050A932174E198009A5F5E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7619122A2133D13400DFA118 /* EventListCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		76050A942174E1A7009A5F5E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7635FCC72133F4B2000ACCB1 /* RoundShadowView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		761912072133C65C00DFA118 = {
+			isa = PBXGroup;
+			children = (
+				761912122133C65C00DFA118 /* Ski Club */,
+				761912342133D29D00DFA118 /* OneSignalNotificationServiceExtension */,
+				761912112133C65C00DFA118 /* Products */,
+				48E8AFDAA1C3FA9183C32F34 /* Pods */,
+				C86870F63EEEAFDB9409254D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		761912112133C65C00DFA118 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				761912102133C65C00DFA118 /* Ski Club.app */,
+				761912332133D29D00DFA118 /* OneSignalNotificationServiceExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		761912122133C65C00DFA118 /* Ski Club */ = {
+			isa = PBXGroup;
+			children = (
+				7635FCC22133EFF5000ACCB1 /* Ski Club.entitlements */,
+				761912132133C65C00DFA118 /* AppDelegate.swift */,
+				761912292133D03C00DFA118 /* Controllers */,
+				7635FCC32133F14B000ACCB1 /* Interface */,
+				76050A722174DEF2009A5F5E /* Models */,
+				76050A732174DF57009A5F5E /* Media */,
+				7619121C2133C65E00DFA118 /* Assets.xcassets */,
+				761912192133C65C00DFA118 /* Main.storyboard */,
+				763DB3CB216B94D200B8EC5E /* Event.storyboard */,
+				7619121E2133C65E00DFA118 /* LaunchScreen.storyboard */,
+				761912212133C65E00DFA118 /* Info.plist */,
+				761912272133CF9B00DFA118 /* GoogleService-Info.plist */,
+			);
+			path = "Ski Club";
+			sourceTree = "<group>";
+		};
+		761912292133D03C00DFA118 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				76050A742174DF9A009A5F5E /* Default */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		761912342133D29D00DFA118 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				761912352133D29D00DFA118 /* NotificationService.swift */,
+				761912372133D29D00DFA118 /* Info.plist */,
+			);
+			path = OneSignalNotificationServiceExtension;
+			sourceTree = "<group>";
+		};
+		7635FCC32133F14B000ACCB1 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				76050A932174E198009A5F5E /* Cells */,
+				76050A942174E1A7009A5F5E /* Views */,
+				7635FCC52133F429000ACCB1 /* Animations.swift */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		7635FCC92133F58B000ACCB1 /* Fontes */ = {
+			isa = PBXGroup;
+			children = (
+				7635FCCA2133F6E5000ACCB1 /* ActaDisplay.otf */,
+			);
+			path = Fontes;
+			sourceTree = "<group>";
+		};
+		C86870F63EEEAFDB9409254D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				321AAF1C7E9127F2F1EC314A /* Pods_Ski_Club.framework */,
+				8E8695AB2FFCDEA7AC727609 /* Pods_OneSignalNotificationServiceExtension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7619120F2133C65C00DFA118 /* Ski Club */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 761912242133C65E00DFA118 /* Build configuration list for PBXNativeTarget "Ski Club" */;
+			buildPhases = (
+				CD0FE1B3FEF57759B2A92BBF /* [CP] Check Pods Manifest.lock */,
+				7619120C2133C65C00DFA118 /* Sources */,
+				7619120D2133C65C00DFA118 /* Frameworks */,
+				7619120E2133C65C00DFA118 /* Resources */,
+				C4A48D9C6A6CBE422645522C /* [CP] Embed Pods Frameworks */,
+				7619123E2133D29D00DFA118 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				761912392133D29D00DFA118 /* PBXTargetDependency */,
+			);
+			name = "Ski Club";
+			productName = "Ski Club";
+			productReference = 761912102133C65C00DFA118 /* Ski Club.app */;
+			productType = "com.apple.product-type.application";
+		};
+		761912322133D29D00DFA118 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7619123B2133D29D00DFA118 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
+			buildPhases = (
+				CFF3AD2BA7149F06907347DA /* [CP] Check Pods Manifest.lock */,
+				7619122F2133D29D00DFA118 /* Sources */,
+				761912302133D29D00DFA118 /* Frameworks */,
+				761912312133D29D00DFA118 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneSignalNotificationServiceExtension;
+			productName = OneSignalNotificationServiceExtension;
+			productReference = 761912332133D29D00DFA118 /* OneSignalNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		761912082133C65C00DFA118 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = Foxmob;
+				TargetAttributes = {
+					7619120F2133C65C00DFA118 = {
+						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+					761912322133D29D00DFA118 = {
+						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
+					};
+				};
+			};
+			buildConfigurationList = 7619120B2133C65C00DFA118 /* Build configuration list for PBXProject "Ski Club" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 761912072133C65C00DFA118;
+			productRefGroup = 761912112133C65C00DFA118 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7619120F2133C65C00DFA118 /* Ski Club */,
+				761912322133D29D00DFA118 /* OneSignalNotificationServiceExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7619120E2133C65C00DFA118 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				761912202133C65E00DFA118 /* LaunchScreen.storyboard in Resources */,
+				763DB3CC216B94D200B8EC5E /* Event.storyboard in Resources */,
+				761912282133CF9B00DFA118 /* GoogleService-Info.plist in Resources */,
+				7635FCCB2133F6E5000ACCB1 /* ActaDisplay.otf in Resources */,
+				7619121D2133C65E00DFA118 /* Assets.xcassets in Resources */,
+				767466B1213BDF1400BAA81E /* placeholder.png in Resources */,
+				7635FCD12134084C000ACCB1 /* logoSkiClub.png in Resources */,
+				7619121B2133C65C00DFA118 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		761912312133D29D00DFA118 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C4A48D9C6A6CBE422645522C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Ski Club/Pods-Ski Club-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/DeckTransition/DeckTransition.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Haptica/Haptica.framework",
+				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/LGButton/LGButton.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/RevealingSplashView/RevealingSplashView.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeckTransition.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Haptica.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LGButton.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealingSplashView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Ski Club/Pods-Ski Club-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD0FE1B3FEF57759B2A92BBF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Ski Club-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CFF3AD2BA7149F06907347DA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OneSignalNotificationServiceExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7619120C2133C65C00DFA118 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7635FCCF2133FEF7000ACCB1 /* LocalData.swift in Sources */,
+				7619122B2133D13400DFA118 /* EventListCell.swift in Sources */,
+				7635FCC62133F429000ACCB1 /* Animations.swift in Sources */,
+				761912142133C65C00DFA118 /* AppDelegate.swift in Sources */,
+				7635FCCD2133FD27000ACCB1 /* EventDetailVC.swift in Sources */,
+				7635FCC82133F4B2000ACCB1 /* RoundShadowView.swift in Sources */,
+				7619122E2133D17600DFA118 /* EventListVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7619122F2133D29D00DFA118 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				761912362133D29D00DFA118 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		761912392133D29D00DFA118 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 761912322133D29D00DFA118 /* OneSignalNotificationServiceExtension */;
+			targetProxy = 761912382133D29D00DFA118 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		761912192133C65C00DFA118 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7619121A2133C65C00DFA118 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7619121E2133C65E00DFA118 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7619121F2133C65E00DFA118 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		761912222133C65E00DFA118 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		761912232133C65E00DFA118 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		761912252133C65E00DFA118 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81E78B6726E8559A38C19BB0 /* Pods-Ski Club.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Ski Club/Ski Club.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LKH8T246BV;
+				INFOPLIST_FILE = "Ski Club/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.foxmob.ski-club";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		761912262133C65E00DFA118 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 703008A7484295F637CBBD7F /* Pods-Ski Club.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Ski Club/Ski Club.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LKH8T246BV;
+				INFOPLIST_FILE = "Ski Club/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.foxmob.ski-club";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		7619123C2133D29D00DFA118 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45489F28E5E83038231F2C37 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LKH8T246BV;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.foxmob.ski-club.OneSignalNotificationServiceExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		7619123D2133D29D00DFA118 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1200DDFAEEAB13B2F404525 /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LKH8T246BV;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.foxmob.ski-club.OneSignalNotificationServiceExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7619120B2133C65C00DFA118 /* Build configuration list for PBXProject "Ski Club" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				761912222133C65E00DFA118 /* Debug */,
+				761912232133C65E00DFA118 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		761912242133C65E00DFA118 /* Build configuration list for PBXNativeTarget "Ski Club" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				761912252133C65E00DFA118 /* Debug */,
+				761912262133C65E00DFA118 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7619123B2133D29D00DFA118 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7619123C2133D29D00DFA118 /* Debug */,
+				7619123D2133D29D00DFA118 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 761912082133C65C00DFA118 /* Project object */;
+}
