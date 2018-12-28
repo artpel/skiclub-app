@@ -23,12 +23,6 @@ class EventListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     @IBOutlet weak var eventList: UITableView!
     @IBOutlet weak var activityLoader: NVActivityIndicatorView!
     
-    @IBAction func partnersButton(_ sender: Any) {
-        
-        
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -95,23 +89,31 @@ class EventListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         let eventCell = tableView.dequeueReusableCell(withIdentifier: "EventListCell") as! EventListCell
         
         eventCell.selectionStyle = .none
-        eventCell.firstTitle.text = LocalData.data["events"][indexPath.row]["name"].string
-        let urlParsed = URL(string: LocalData.data["events"][indexPath.row]["imgUrl"].string!)
-        let placeholder = UIImage(named: "placeholder.png") //
-        eventCell.imageTop?.kf.setImage(with: urlParsed, placeholder: placeholder)
-        eventCell.dateTitle.text = LocalData.data["events"][indexPath.row]["date"].string
         tableView.rowHeight = 200
         tableView.backgroundColor = UIColor.clear
         tableView.separatorStyle = .none
+        
+        // Title
+        eventCell.firstTitle.text = LocalData.data["events"][indexPath.row]["name"].string
+        
+        // Image
+        let urlParsed = URL(string: LocalData.data["events"][indexPath.row]["imgUrl"].string!)
+        let placeholder = UIImage(named: "placeholder.png")
+        eventCell.imageTop?.kf.setImage(with: urlParsed, placeholder: placeholder)
+        
+        // Date
+        eventCell.dateTitle.text = LocalData.data["events"][indexPath.row]["date"].string
     
         return eventCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        Haptic.impact(.medium).generate()
-        let detailView = EventDetailVC()
         LocalData.indexSelected = indexPath.row
+        
+        Haptic.impact(.medium).generate()
+        
+        let detailView = EventDetailVC()
         let transitionDelegate = DeckTransitioningDelegate()
         detailView.transitioningDelegate = transitionDelegate
         detailView.modalPresentationStyle = .custom

@@ -24,6 +24,8 @@
 		7635FCD12134084C000ACCB1 /* logoSkiClub.png in Resources */ = {isa = PBXBuildFile; fileRef = 7635FCD02134084B000ACCB1 /* logoSkiClub.png */; };
 		763DB3CC216B94D200B8EC5E /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 763DB3CB216B94D200B8EC5E /* Event.storyboard */; };
 		767466B1213BDF1400BAA81E /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 767466B0213BDF1300BAA81E /* placeholder.png */; };
+		7697175421D68DD500C13FF0 /* AccueilVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7697175321D68DD500C13FF0 /* AccueilVC.swift */; };
+		7697175721D68E2800C13FF0 /* GlobalHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7697175621D68E2800C13FF0 /* GlobalHelpers.swift */; };
 		A29E73EAC5620F25628DC0DD /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E8695AB2FFCDEA7AC727609 /* Pods_OneSignalNotificationServiceExtension.framework */; };
 		F0E7987A4C461447E499B38E /* Pods_Ski_Club.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 321AAF1C7E9127F2F1EC314A /* Pods_Ski_Club.framework */; };
 /* End PBXBuildFile section */
@@ -77,6 +79,8 @@
 		7635FCD02134084B000ACCB1 /* logoSkiClub.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoSkiClub.png; sourceTree = "<group>"; };
 		763DB3CB216B94D200B8EC5E /* Event.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
 		767466B0213BDF1300BAA81E /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
+		7697175321D68DD500C13FF0 /* AccueilVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccueilVC.swift; sourceTree = "<group>"; };
+		7697175621D68E2800C13FF0 /* GlobalHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalHelpers.swift; sourceTree = "<group>"; };
 		81E78B6726E8559A38C19BB0 /* Pods-Ski Club.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ski Club.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ski Club/Pods-Ski Club.debug.xcconfig"; sourceTree = "<group>"; };
 		8E8695AB2FFCDEA7AC727609 /* Pods_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1200DDFAEEAB13B2F404525 /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 				761912292133D03C00DFA118 /* Controllers */,
 				7635FCC32133F14B000ACCB1 /* Interface */,
 				76050A722174DEF2009A5F5E /* Models */,
+				7697175521D68E1700C13FF0 /* Helpers */,
 				76050A732174DF57009A5F5E /* Media */,
 				7619121C2133C65E00DFA118 /* Assets.xcassets */,
 				761912192133C65C00DFA118 /* Main.storyboard */,
@@ -198,6 +203,7 @@
 		761912292133D03C00DFA118 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7697175221D68D8900C13FF0 /* EventApp */,
 				76050A742174DF9A009A5F5E /* Default */,
 			);
 			path = Controllers;
@@ -228,6 +234,22 @@
 				7635FCCA2133F6E5000ACCB1 /* ActaDisplay.otf */,
 			);
 			path = Fontes;
+			sourceTree = "<group>";
+		};
+		7697175221D68D8900C13FF0 /* EventApp */ = {
+			isa = PBXGroup;
+			children = (
+				7697175321D68DD500C13FF0 /* AccueilVC.swift */,
+			);
+			path = EventApp;
+			sourceTree = "<group>";
+		};
+		7697175521D68E1700C13FF0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7697175621D68E2800C13FF0 /* GlobalHelpers.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		C86870F63EEEAFDB9409254D /* Frameworks */ = {
@@ -362,6 +384,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Ski Club/Pods-Ski Club-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CFAlertViewController/CFAlertViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/DeckTransition/DeckTransition.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
@@ -371,6 +394,7 @@
 				"${BUILT_PRODUCTS_DIR}/LGButton/LGButton.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/RevealingSplashView/RevealingSplashView.framework",
+				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -379,6 +403,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CFAlertViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeckTransition.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
@@ -388,6 +413,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LGButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealingSplashView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -441,7 +467,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7697175721D68E2800C13FF0 /* GlobalHelpers.swift in Sources */,
 				7635FCCF2133FEF7000ACCB1 /* LocalData.swift in Sources */,
+				7697175421D68DD500C13FF0 /* AccueilVC.swift in Sources */,
 				7619122B2133D13400DFA118 /* EventListCell.swift in Sources */,
 				7635FCC62133F429000ACCB1 /* Animations.swift in Sources */,
 				761912142133C65C00DFA118 /* AppDelegate.swift in Sources */,
