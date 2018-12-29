@@ -28,6 +28,7 @@ target 'Ski Club' do
     pod 'Spring'
     pod 'CFAlertViewController'
     pod 'ReachabilitySwift'
+    pod 'FontAwesome.swift'
     
     post_install do |installer|
         installer.pods_project.targets.each do |target|

@@ -23,6 +23,7 @@ class AccueilVC: UIViewController {
     
     let navigat = UINavigationBar()
     
+    @IBOutlet weak var chevron: UIButton!
     // Introduction
     
     @IBOutlet weak var bienvenue: RoundShadowView!
@@ -58,12 +59,16 @@ class AccueilVC: UIViewController {
         // Database initialisation
         ref = Database.database().reference()
         
+        chevron.titleLabel?.font = UIFont.fontAwesome(ofSize: 15, style: .solid)
+        chevron.setTitle(String.fontAwesomeIcon(name: .chevronRight), for: .normal)
       
         // Image dans la barre de titre
         // UI.setImageInTitle(nav: self.navigationItem)
         
         let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.checkAction))
         self.bienvenue.addGestureRecognizer(gesture)
+        
+        
         
     }
     
