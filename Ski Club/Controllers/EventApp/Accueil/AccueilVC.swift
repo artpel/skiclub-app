@@ -12,7 +12,6 @@ import Firebase
 import FirebaseDatabase
 import Kingfisher
 import Haptica
-import BulletinBoard
 import CFAlertViewController
 import ChameleonFramework
 import RevealingSplashView

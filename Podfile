@@ -27,6 +27,7 @@ target 'Ski Club' do
     pod 'SwiftDate'
     pod 'Spring'
     pod 'CFAlertViewController'
+    pod 'ReachabilitySwift'
     
     post_install do |installer|
         installer.pods_project.targets.each do |target|

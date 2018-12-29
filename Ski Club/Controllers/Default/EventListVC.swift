@@ -59,7 +59,7 @@ class EventListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
                 DispatchQueue.main.async(execute: {
                     self.eventList.reloadData()
                     
-                    if LocalData.data["event"] == true {
+                    if LocalData.data["event"] == false {
                         self.redirectToEvent()
                     }
                         

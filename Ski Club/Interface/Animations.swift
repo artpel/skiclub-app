@@ -1,16 +1,75 @@
 //
-//  File.swift
-//  Ski Club
+//  Animations.swift
+//  Phileas
 //
-//  Created by Arthur Péligry on 27/08/2018.
-//  Copyright © 2018 Foxmob. All rights reserved.
+//  Created by Arthur Péligry on 16/10/2017.
+//  Copyright © 2017 Arthur Péligry. All rights reserved.
 //
 
 import Foundation
-import UIKit
+import Spring
 
 class Animations {
-   
+    
+    static func fadeOut(viewGiven: SpringView) {
+        viewGiven.animation = "fadeOut"
+        viewGiven.animation = "fadeOut"
+        viewGiven.curve = "spring"
+        viewGiven.force =  2.3
+        viewGiven.duration =  3
+        viewGiven.animate()
+        
+    }
+    
+    static func fadeIn(viewGiven: SpringView) {
+        viewGiven.isHidden = false
+        viewGiven.animation = "fadeIn"
+        viewGiven.animation = "fadeIn"
+        viewGiven.curve = "spring"
+        viewGiven.force =  2.0
+        viewGiven.duration =  5
+        viewGiven.animate()
+    }
+    
+    static func adFadeIn(viewGiven: SpringView) {
+        viewGiven.isHidden = false
+        viewGiven.animation = "fadeIn"
+        viewGiven.animation = "fadeIn"
+        viewGiven.curve = "spring"
+        viewGiven.force =  2.0
+        viewGiven.duration =  2.0
+        viewGiven.animate()
+    }
+    
+    static func pop(viewGiven: SpringView) {
+        viewGiven.isHidden = false
+        viewGiven.animation = "fadeInLeft"
+        viewGiven.curve = "spring"
+        viewGiven.force =  0.2
+        viewGiven.duration =  1
+        viewGiven.animate()
+    }
+    
+    static func wobble(viewGiven: SpringView) {
+        viewGiven.isHidden = false
+        viewGiven.animation = "wobble"
+        viewGiven.curve = "spring"
+        viewGiven.force =  0.2
+        viewGiven.duration =  1
+        viewGiven.animate()
+    }
+    
+    
+    static func shake(viewGiven: SpringView) {
+        viewGiven.isHidden = false
+        viewGiven.animation = "shake"
+        viewGiven.curve = "spring"
+        viewGiven.force =  0.2
+        viewGiven.duration =  1
+        viewGiven.animate()
+    }
+    
+    
     static func animateCells(tableView: UITableView) {
         // Animation
         let cells = tableView.visibleCells

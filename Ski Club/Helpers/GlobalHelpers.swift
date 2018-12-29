@@ -9,14 +9,16 @@
 import Foundation
 import UIKit
 import CFAlertViewController
+import ChameleonFramework
+
 
 struct GlobalHelpers {
     
     static func noInternetConnection() {
+        /*
+        let reachability = Reachability()!
         
-        if Reachability.isConnectedToNetwork() {
-            
-        } else {
+        reachability.whenUnreachable = { _ in
             // Create Alet View Controller
             let alertController = CFAlertViewController(title: "Pas de connexion internet",
                                                         message: "Vous devez être connectés à Internet pour utiliser l'app",
@@ -32,10 +34,16 @@ struct GlobalHelpers {
                                               handler: { (action) in
                                                 Haptic.notification(.error).generate()
             })
+        }
+        
+        if reachability.isConnectedToNetwork() {
+            
+        } else {
+            
             
             alertController.addAction(defaultAction)
             //present(alertController, animated: true, completion: nil)
-        }
+        }*/
         
     }
     

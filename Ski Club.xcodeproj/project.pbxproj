@@ -22,10 +22,16 @@
 		7635FCCD2133FD27000ACCB1 /* EventDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7635FCCC2133FD27000ACCB1 /* EventDetailVC.swift */; };
 		7635FCCF2133FEF7000ACCB1 /* LocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7635FCCE2133FEF7000ACCB1 /* LocalData.swift */; };
 		7635FCD12134084C000ACCB1 /* logoSkiClub.png in Resources */ = {isa = PBXBuildFile; fileRef = 7635FCD02134084B000ACCB1 /* logoSkiClub.png */; };
-		763DB3CC216B94D200B8EC5E /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 763DB3CB216B94D200B8EC5E /* Event.storyboard */; };
+		763DB3CC216B94D200B8EC5E /* EventBackup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 763DB3CB216B94D200B8EC5E /* EventBackup.storyboard */; };
 		767466B1213BDF1400BAA81E /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 767466B0213BDF1300BAA81E /* placeholder.png */; };
 		7697175421D68DD500C13FF0 /* AccueilVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7697175321D68DD500C13FF0 /* AccueilVC.swift */; };
 		7697175721D68E2800C13FF0 /* GlobalHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7697175621D68E2800C13FF0 /* GlobalHelpers.swift */; };
+		76F8E49F21D7A94200050CE7 /* PushHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F8E49E21D7A94200050CE7 /* PushHistoryVC.swift */; };
+		76F8E4A121D7A94D00050CE7 /* NextEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F8E4A021D7A94D00050CE7 /* NextEventVC.swift */; };
+		76F8E4A321D7AE1900050CE7 /* kremlin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76F8E4A221D7AE1900050CE7 /* kremlin.ttf */; };
+		76F8E4A521D7BF7F00050CE7 /* PushCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F8E4A421D7BF7F00050CE7 /* PushCell.swift */; };
+		76F8E4A721D7C42800050CE7 /* logo_vlad_transp.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F8E4A621D7C42800050CE7 /* logo_vlad_transp.png */; };
+		76F8E4A921D7C61300050CE7 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76F8E4A821D7C61300050CE7 /* Event.storyboard */; };
 		A29E73EAC5620F25628DC0DD /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E8695AB2FFCDEA7AC727609 /* Pods_OneSignalNotificationServiceExtension.framework */; };
 		F0E7987A4C461447E499B38E /* Pods_Ski_Club.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 321AAF1C7E9127F2F1EC314A /* Pods_Ski_Club.framework */; };
 /* End PBXBuildFile section */
@@ -77,10 +83,16 @@
 		7635FCCC2133FD27000ACCB1 /* EventDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailVC.swift; sourceTree = "<group>"; };
 		7635FCCE2133FEF7000ACCB1 /* LocalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalData.swift; sourceTree = "<group>"; };
 		7635FCD02134084B000ACCB1 /* logoSkiClub.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoSkiClub.png; sourceTree = "<group>"; };
-		763DB3CB216B94D200B8EC5E /* Event.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
+		763DB3CB216B94D200B8EC5E /* EventBackup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventBackup.storyboard; sourceTree = "<group>"; };
 		767466B0213BDF1300BAA81E /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		7697175321D68DD500C13FF0 /* AccueilVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccueilVC.swift; sourceTree = "<group>"; };
 		7697175621D68E2800C13FF0 /* GlobalHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalHelpers.swift; sourceTree = "<group>"; };
+		76F8E49E21D7A94200050CE7 /* PushHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushHistoryVC.swift; sourceTree = "<group>"; };
+		76F8E4A021D7A94D00050CE7 /* NextEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextEventVC.swift; sourceTree = "<group>"; };
+		76F8E4A221D7AE1900050CE7 /* kremlin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = kremlin.ttf; sourceTree = "<group>"; };
+		76F8E4A421D7BF7F00050CE7 /* PushCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushCell.swift; sourceTree = "<group>"; };
+		76F8E4A621D7C42800050CE7 /* logo_vlad_transp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_vlad_transp.png; sourceTree = "<group>"; };
+		76F8E4A821D7C61300050CE7 /* Event.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
 		81E78B6726E8559A38C19BB0 /* Pods-Ski Club.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ski Club.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ski Club/Pods-Ski Club.debug.xcconfig"; sourceTree = "<group>"; };
 		8E8695AB2FFCDEA7AC727609 /* Pods_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1200DDFAEEAB13B2F404525 /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +142,7 @@
 			children = (
 				7635FCC92133F58B000ACCB1 /* Fontes */,
 				7635FCD02134084B000ACCB1 /* logoSkiClub.png */,
+				76F8E4A621D7C42800050CE7 /* logo_vlad_transp.png */,
 				767466B0213BDF1300BAA81E /* placeholder.png */,
 			);
 			path = Media;
@@ -147,6 +160,7 @@
 		76050A932174E198009A5F5E /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				76F8E4A421D7BF7F00050CE7 /* PushCell.swift */,
 				7619122A2133D13400DFA118 /* EventListCell.swift */,
 			);
 			path = Cells;
@@ -192,7 +206,8 @@
 				76050A732174DF57009A5F5E /* Media */,
 				7619121C2133C65E00DFA118 /* Assets.xcassets */,
 				761912192133C65C00DFA118 /* Main.storyboard */,
-				763DB3CB216B94D200B8EC5E /* Event.storyboard */,
+				763DB3CB216B94D200B8EC5E /* EventBackup.storyboard */,
+				76F8E4A821D7C61300050CE7 /* Event.storyboard */,
 				7619121E2133C65E00DFA118 /* LaunchScreen.storyboard */,
 				761912212133C65E00DFA118 /* Info.plist */,
 				761912272133CF9B00DFA118 /* GoogleService-Info.plist */,
@@ -232,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				7635FCCA2133F6E5000ACCB1 /* ActaDisplay.otf */,
+				76F8E4A221D7AE1900050CE7 /* kremlin.ttf */,
 			);
 			path = Fontes;
 			sourceTree = "<group>";
@@ -239,7 +255,11 @@
 		7697175221D68D8900C13FF0 /* EventApp */ = {
 			isa = PBXGroup;
 			children = (
-				7697175321D68DD500C13FF0 /* AccueilVC.swift */,
+				76F8E49621D7A87100050CE7 /* Accueil */,
+				76F8E49821D7A88700050CE7 /* Programme */,
+				76F8E49A21D7A8F400050CE7 /* Pratique */,
+				76F8E49921D7A8EF00050CE7 /* Plan */,
+				76F8E49D21D7A92900050CE7 /* Partenaires */,
 			);
 			path = EventApp;
 			sourceTree = "<group>";
@@ -250,6 +270,44 @@
 				7697175621D68E2800C13FF0 /* GlobalHelpers.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		76F8E49621D7A87100050CE7 /* Accueil */ = {
+			isa = PBXGroup;
+			children = (
+				7697175321D68DD500C13FF0 /* AccueilVC.swift */,
+				76F8E49E21D7A94200050CE7 /* PushHistoryVC.swift */,
+				76F8E4A021D7A94D00050CE7 /* NextEventVC.swift */,
+			);
+			path = Accueil;
+			sourceTree = "<group>";
+		};
+		76F8E49821D7A88700050CE7 /* Programme */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Programme;
+			sourceTree = "<group>";
+		};
+		76F8E49921D7A8EF00050CE7 /* Plan */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Plan;
+			sourceTree = "<group>";
+		};
+		76F8E49A21D7A8F400050CE7 /* Pratique */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pratique;
+			sourceTree = "<group>";
+		};
+		76F8E49D21D7A92900050CE7 /* Partenaires */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Partenaires;
 			sourceTree = "<group>";
 		};
 		C86870F63EEEAFDB9409254D /* Frameworks */ = {
@@ -356,11 +414,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				761912202133C65E00DFA118 /* LaunchScreen.storyboard in Resources */,
-				763DB3CC216B94D200B8EC5E /* Event.storyboard in Resources */,
+				76F8E4A321D7AE1900050CE7 /* kremlin.ttf in Resources */,
+				763DB3CC216B94D200B8EC5E /* EventBackup.storyboard in Resources */,
+				76F8E4A921D7C61300050CE7 /* Event.storyboard in Resources */,
 				761912282133CF9B00DFA118 /* GoogleService-Info.plist in Resources */,
 				7635FCCB2133F6E5000ACCB1 /* ActaDisplay.otf in Resources */,
 				7619121D2133C65E00DFA118 /* Assets.xcassets in Resources */,
 				767466B1213BDF1400BAA81E /* placeholder.png in Resources */,
+				76F8E4A721D7C42800050CE7 /* logo_vlad_transp.png in Resources */,
 				7635FCD12134084C000ACCB1 /* logoSkiClub.png in Resources */,
 				7619121B2133C65C00DFA118 /* Main.storyboard in Resources */,
 			);
@@ -393,6 +454,7 @@
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/LGButton/LGButton.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/RevealingSplashView/RevealingSplashView.framework",
 				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
@@ -412,6 +474,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LGButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealingSplashView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
@@ -471,9 +534,12 @@
 				7635FCCF2133FEF7000ACCB1 /* LocalData.swift in Sources */,
 				7697175421D68DD500C13FF0 /* AccueilVC.swift in Sources */,
 				7619122B2133D13400DFA118 /* EventListCell.swift in Sources */,
+				76F8E4A121D7A94D00050CE7 /* NextEventVC.swift in Sources */,
+				76F8E49F21D7A94200050CE7 /* PushHistoryVC.swift in Sources */,
 				7635FCC62133F429000ACCB1 /* Animations.swift in Sources */,
 				761912142133C65C00DFA118 /* AppDelegate.swift in Sources */,
 				7635FCCD2133FD27000ACCB1 /* EventDetailVC.swift in Sources */,
+				76F8E4A521D7BF7F00050CE7 /* PushCell.swift in Sources */,
 				7635FCC82133F4B2000ACCB1 /* RoundShadowView.swift in Sources */,
 				7619122E2133D17600DFA118 /* EventListVC.swift in Sources */,
 			);
