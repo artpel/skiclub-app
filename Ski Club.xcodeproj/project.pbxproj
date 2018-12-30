@@ -32,6 +32,9 @@
 		76F8E4A521D7BF7F00050CE7 /* PushCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F8E4A421D7BF7F00050CE7 /* PushCell.swift */; };
 		76F8E4A721D7C42800050CE7 /* logo_vlad_transp.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F8E4A621D7C42800050CE7 /* logo_vlad_transp.png */; };
 		76F8E4A921D7C61300050CE7 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76F8E4A821D7C61300050CE7 /* Event.storyboard */; };
+		76FDB23A21D9498100933C21 /* ProgrammeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FDB23921D9498100933C21 /* ProgrammeVC.swift */; };
+		76FDB23C21D94C8D00933C21 /* ProgrammeDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FDB23B21D94C8D00933C21 /* ProgrammeDetailCell.swift */; };
+		76FDB23E21D9536500933C21 /* PlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FDB23D21D9536500933C21 /* PlanVC.swift */; };
 		A29E73EAC5620F25628DC0DD /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E8695AB2FFCDEA7AC727609 /* Pods_OneSignalNotificationServiceExtension.framework */; };
 		F0E7987A4C461447E499B38E /* Pods_Ski_Club.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 321AAF1C7E9127F2F1EC314A /* Pods_Ski_Club.framework */; };
 /* End PBXBuildFile section */
@@ -93,6 +96,9 @@
 		76F8E4A421D7BF7F00050CE7 /* PushCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushCell.swift; sourceTree = "<group>"; };
 		76F8E4A621D7C42800050CE7 /* logo_vlad_transp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_vlad_transp.png; sourceTree = "<group>"; };
 		76F8E4A821D7C61300050CE7 /* Event.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
+		76FDB23921D9498100933C21 /* ProgrammeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammeVC.swift; sourceTree = "<group>"; };
+		76FDB23B21D94C8D00933C21 /* ProgrammeDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammeDetailCell.swift; sourceTree = "<group>"; };
+		76FDB23D21D9536500933C21 /* PlanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanVC.swift; sourceTree = "<group>"; };
 		81E78B6726E8559A38C19BB0 /* Pods-Ski Club.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ski Club.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ski Club/Pods-Ski Club.debug.xcconfig"; sourceTree = "<group>"; };
 		8E8695AB2FFCDEA7AC727609 /* Pods_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1200DDFAEEAB13B2F404525 /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
@@ -162,6 +168,7 @@
 			children = (
 				76F8E4A421D7BF7F00050CE7 /* PushCell.swift */,
 				7619122A2133D13400DFA118 /* EventListCell.swift */,
+				76FDB23B21D94C8D00933C21 /* ProgrammeDetailCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -285,6 +292,7 @@
 		76F8E49821D7A88700050CE7 /* Programme */ = {
 			isa = PBXGroup;
 			children = (
+				76FDB23921D9498100933C21 /* ProgrammeVC.swift */,
 			);
 			path = Programme;
 			sourceTree = "<group>";
@@ -292,6 +300,7 @@
 		76F8E49921D7A8EF00050CE7 /* Plan */ = {
 			isa = PBXGroup;
 			children = (
+				76FDB23D21D9536500933C21 /* PlanVC.swift */,
 			);
 			path = Plan;
 			sourceTree = "<group>";
@@ -532,6 +541,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76FDB23A21D9498100933C21 /* ProgrammeVC.swift in Sources */,
+				76FDB23C21D94C8D00933C21 /* ProgrammeDetailCell.swift in Sources */,
 				7697175721D68E2800C13FF0 /* GlobalHelpers.swift in Sources */,
 				7635FCCF2133FEF7000ACCB1 /* LocalData.swift in Sources */,
 				7697175421D68DD500C13FF0 /* AccueilVC.swift in Sources */,
@@ -543,6 +554,7 @@
 				7635FCCD2133FD27000ACCB1 /* EventDetailVC.swift in Sources */,
 				76F8E4A521D7BF7F00050CE7 /* PushCell.swift in Sources */,
 				7635FCC82133F4B2000ACCB1 /* RoundShadowView.swift in Sources */,
+				76FDB23E21D9536500933C21 /* PlanVC.swift in Sources */,
 				7619122E2133D17600DFA118 /* EventListVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,40 +10,33 @@ import Foundation
 import UIKit
 import CFAlertViewController
 import ChameleonFramework
-
+import SystemConfiguration
 
 struct GlobalHelpers {
     
-    static func noInternetConnection() {
-        /*
-        let reachability = Reachability()!
+   static func isConnectedToNetwork() -> Bool {
         
-        reachability.whenUnreachable = { _ in
-            // Create Alet View Controller
-            let alertController = CFAlertViewController(title: "Pas de connexion internet",
-                                                        message: "Vous devez être connectés à Internet pour utiliser l'app",
-                                                        textAlignment: .left,
-                                                        preferredStyle: .alert,
-                                                        didDismissAlertHandler: nil)
-            
-            let defaultAction = CFAlertAction(title: "Ça roule !",
-                                              style: .Default,
-                                              alignment: .right,
-                                              backgroundColor: HexColor("C00011"),
-                                              textColor: HexColor("ffffff"),
-                                              handler: { (action) in
-                                                Haptic.notification(.error).generate()
-            })
+        var zeroAddress = sockaddr_in(sin_len: 0, sin_family: 0, sin_port: 0, sin_addr: in_addr(s_addr: 0), sin_zero: (0, 0, 0, 0, 0, 0, 0, 0))
+        zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))
+        zeroAddress.sin_family = sa_family_t(AF_INET)
+        
+        let defaultRouteReachability = withUnsafePointer(to: &zeroAddress) {
+            $0.withMemoryRebound(to: sockaddr.self, capacity: 1) {zeroSockAddress in
+                SCNetworkReachabilityCreateWithAddress(nil, zeroSockAddress)
+            }
         }
         
-        if reachability.isConnectedToNetwork() {
-            
-        } else {
-            
-            
-            alertController.addAction(defaultAction)
-            //present(alertController, animated: true, completion: nil)
-        }*/
+        var flags: SCNetworkReachabilityFlags = SCNetworkReachabilityFlags(rawValue: 0)
+        if SCNetworkReachabilityGetFlags(defaultRouteReachability!, &flags) == false {
+            return false
+        }
+    
+        // Working for Cellular and WIFI
+        let isReachable = (flags.rawValue & UInt32(kSCNetworkFlagsReachable)) != 0
+        let needsConnection = (flags.rawValue & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
+        let ret = (isReachable && !needsConnection)
+        
+        return ret
         
     }
     
