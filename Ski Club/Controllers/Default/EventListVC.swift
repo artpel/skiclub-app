@@ -82,35 +82,6 @@ class EventListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
             
         })
         
-//        ref?.observe(.value) {
-//            (snapshot: DataSnapshot) in
-//
-//            if ( snapshot.value is NSNull ) {
-//
-//            } else {
-//
-//                if let value = snapshot.value as? [String: AnyObject] {
-//                    LocalData.data = JSON(value)
-//                }
-//
-//                DispatchQueue.main.async(execute: {
-//                    self.eventList.reloadData()
-//
-//                    if LocalData.data["event"] == false {
-//                        self.redirectToEvent()
-//                    }
-//
-//                    self.activityLoader.stopAnimating()
-//                    self.eventList.isHidden = false
-//                    self.titleEvent.isHidden = false
-//                    self.logoSkiClub.isHidden = false
-//                    Animations.animateCells(tableView: self.eventList)
-//
-//                })
-//
-//            }
-//        }
-        
     }
     
     // TableView

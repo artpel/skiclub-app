@@ -30,7 +30,6 @@
 		76B6CF6D21DA133300071D2D /* PratiqueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B6CF6C21DA133300071D2D /* PratiqueVC.swift */; };
 		76B6CF6F21DA177C00071D2D /* PartenairesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B6CF6E21DA177C00071D2D /* PartenairesVC.swift */; };
 		76B6CF7121DA180700071D2D /* PartenairesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B6CF7021DA180700071D2D /* PartenairesCell.swift */; };
-		76CDCB9521DA221A00E44368 /* FirebaseFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CDCB9421DA221A00E44368 /* FirebaseFunctions.swift */; };
 		76F8E49F21D7A94200050CE7 /* PushHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F8E49E21D7A94200050CE7 /* PushHistoryVC.swift */; };
 		76F8E4A121D7A94D00050CE7 /* NextEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F8E4A021D7A94D00050CE7 /* NextEventVC.swift */; };
 		76F8E4A321D7AE1900050CE7 /* kremlin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76F8E4A221D7AE1900050CE7 /* kremlin.ttf */; };
@@ -99,7 +98,6 @@
 		76B6CF6C21DA133300071D2D /* PratiqueVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PratiqueVC.swift; sourceTree = "<group>"; };
 		76B6CF6E21DA177C00071D2D /* PartenairesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartenairesVC.swift; sourceTree = "<group>"; };
 		76B6CF7021DA180700071D2D /* PartenairesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartenairesCell.swift; sourceTree = "<group>"; };
-		76CDCB9421DA221A00E44368 /* FirebaseFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFunctions.swift; sourceTree = "<group>"; };
 		76F8E49E21D7A94200050CE7 /* PushHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushHistoryVC.swift; sourceTree = "<group>"; };
 		76F8E4A021D7A94D00050CE7 /* NextEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextEventVC.swift; sourceTree = "<group>"; };
 		76F8E4A221D7AE1900050CE7 /* kremlin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = kremlin.ttf; sourceTree = "<group>"; };
@@ -287,7 +285,6 @@
 			isa = PBXGroup;
 			children = (
 				7697175621D68E2800C13FF0 /* GlobalHelpers.swift */,
-				76CDCB9421DA221A00E44368 /* FirebaseFunctions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -563,7 +560,6 @@
 				7635FCCF2133FEF7000ACCB1 /* LocalData.swift in Sources */,
 				766DBCEE21DA0AF0004626A4 /* PlanCell.swift in Sources */,
 				7697175421D68DD500C13FF0 /* AccueilVC.swift in Sources */,
-				76CDCB9521DA221A00E44368 /* FirebaseFunctions.swift in Sources */,
 				7619122B2133D13400DFA118 /* EventListCell.swift in Sources */,
 				76F8E4A121D7A94D00050CE7 /* NextEventVC.swift in Sources */,
 				76F8E49F21D7A94200050CE7 /* PushHistoryVC.swift in Sources */,

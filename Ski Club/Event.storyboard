@@ -159,7 +159,7 @@
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xRO-dW-tO7" customClass="RoundShadowView" customModule="Ski_Club" customModuleProvider="target">
                                                     <rect key="frame" x="4" y="4" width="97" height="97"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="bpG-wf-xyU">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="bpG-wf-xyU">
                                                             <rect key="frame" x="0.0" y="0.0" width="97" height="97"/>
                                                         </imageView>
                                                     </subviews>
@@ -511,52 +511,52 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProgrammeDetailCell" rowHeight="160" id="LOy-LU-kYJ" customClass="ProgrammeDetailCell" customModule="Ski_Club" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="160"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProgrammeDetailCell" rowHeight="200" id="LOy-LU-kYJ" customClass="ProgrammeDetailCell" customModule="Ski_Club" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LOy-LU-kYJ" id="e8r-Dp-3u5">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="159.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="joj-Hk-GRb" customClass="RoundShadowView" customModule="Ski_Club" customModuleProvider="target">
-                                                    <rect key="frame" x="13" y="8" width="349" height="143.5"/>
+                                                    <rect key="frame" x="13" y="8" width="349" height="183.5"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="dpO-6U-k2O">
-                                                            <rect key="frame" x="0.0" y="0.0" width="349" height="100"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="349" height="135"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="100" id="Q88-6V-7FT"/>
+                                                                <constraint firstAttribute="height" constant="135" id="Q88-6V-7FT"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descente aux flambeaux" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nwo-bQ-Zp9">
-                                                            <rect key="frame" x="70" y="104" width="271" height="17"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                            <rect key="frame" x="70" y="140" width="271" height="19.5"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                             <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Piste des marmottes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beK-g2-yky">
-                                                            <rect key="frame" x="70" y="123" width="271" height="14"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                                            <rect key="frame" x="70" y="161.5" width="271" height="16"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                                             <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jRK-sj-HGl" customClass="RoundShadowView" customModule="Ski_Club" customModuleProvider="target">
-                                                            <rect key="frame" x="8" y="104" width="54" height="34"/>
+                                                            <rect key="frame" x="8" y="139" width="54" height="39"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23h50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q93-0e-QSA">
-                                                                    <rect key="frame" x="2" y="4" width="50" height="14.5"/>
+                                                                    <rect key="frame" x="2" y="4" width="50" height="16"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="50" id="mo2-6Q-Oww"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23h50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4f-Wu-ILZ">
-                                                                    <rect key="frame" x="2" y="19.5" width="50" height="13.5"/>
+                                                                    <rect key="frame" x="2" y="21" width="50" height="14.5"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="50" id="BM7-Z4-afg"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="11"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -589,7 +589,7 @@
                                                         <constraint firstItem="Nwo-bQ-Zp9" firstAttribute="leading" secondItem="jRK-sj-HGl" secondAttribute="trailing" constant="8" id="k5H-tE-8Qy"/>
                                                         <constraint firstAttribute="trailing" secondItem="dpO-6U-k2O" secondAttribute="trailing" id="nIb-hj-h3H"/>
                                                         <constraint firstItem="dpO-6U-k2O" firstAttribute="top" secondItem="joj-Hk-GRb" secondAttribute="top" id="nKM-DR-fA7"/>
-                                                        <constraint firstItem="Nwo-bQ-Zp9" firstAttribute="top" secondItem="dpO-6U-k2O" secondAttribute="bottom" constant="4" id="uwn-3D-Z6g"/>
+                                                        <constraint firstItem="Nwo-bQ-Zp9" firstAttribute="top" secondItem="dpO-6U-k2O" secondAttribute="bottom" constant="5" id="uwn-3D-Z6g"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
@@ -608,6 +608,13 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="heureDebut" destination="Q93-0e-QSA" id="0EF-so-C2X"/>
+                                            <outlet property="heureFin" destination="B4f-Wu-ILZ" id="XdA-3J-hrV"/>
+                                            <outlet property="imageEvent" destination="dpO-6U-k2O" id="9tv-Up-phZ"/>
+                                            <outlet property="nomEvent" destination="Nwo-bQ-Zp9" id="SKh-mM-Wdj"/>
+                                            <outlet property="zoneEvent" destination="beK-g2-yky" id="rHO-hr-Eoa"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -722,7 +729,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="78V-vi-cm5" firstAttribute="top" secondItem="g2f-vS-fmU" secondAttribute="top" id="4KT-jW-IaX"/>
                             <constraint firstItem="78V-vi-cm5" firstAttribute="trailing" secondItem="Fhr-mO-q9g" secondAttribute="trailing" id="EeD-Wg-22e"/>

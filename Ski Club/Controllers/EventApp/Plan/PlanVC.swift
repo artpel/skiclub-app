@@ -24,13 +24,22 @@ class PlanVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UI
     // Location Manager
     var locationManager = CLLocationManager()
     
+    struct Selected {
+        static var delta = "0.00300"
+        static var nomPlan = String()
+        static var latitude = "45.274077"
+        static var longitude = "6.817068"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         self.listPlan.rowHeight = 70
     
-        // setMap(latitude: LocalData.Plan.Selected.latitude, longitude: LocalData.Plan.Selected.longitude, deltaLat: LocalData.Plan.Selected.delta, deltaLong: LocalData.Plan.Selected.delta)
+        setMap(latitude: Selected.latitude, longitude: Selected.longitude, deltaLat: Selected.delta, deltaLong: Selected.delta)
         startLocationServices()
+        
+        loadAnnotations()
         
     }
     
@@ -81,31 +90,29 @@ class PlanVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UI
         self.planStation.setRegion(region, animated: true)
         self.planStation.mapType = MKMapType.hybrid;
     }
-//
-//    func createAnnotation(i: Int) {
-//
-//         let annotation = MKPointAnnotation()
-//         annotation.title = LocalData.Plan.nomPlan[i]
-//
-//         let location:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: latitude!, longitude: longitude!)
-//         annotation.coordinate = location
-//         // self.planStation.addAnnotation(annotation)
-//    }
-////
-//    func loadAnnotations() {
-//        var i = 0
-//        while i < LocalData.Plan.nomPlan.count {
-//            createAnnotation(i: i)
-//            i += 1
-//        }
-//    }
-//    
-//
-//
-//    // Table View
-//
+
+    func createAnnotation(i: Int) {
+
+        let annotation = MKPointAnnotation()
+        annotation.title = LocalData.data["eventData"]["plan"][i]["title"].string!
+        
+        let location:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: LocalData.data["eventData"]["plan"][i]["lat"].double!, longitude: LocalData.data["eventData"]["plan"][i]["long"].double!)
+        annotation.coordinate = location
+        self.planStation.addAnnotation(annotation)
+    }
+
+    func loadAnnotations() {
+        var i = 0
+        while i < LocalData.data["eventData"]["plan"].count {
+            createAnnotation(i: i)
+            i += 1
+        }
+    }
+    
+    // Table View
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return LocalData.data["eventData"]["plan"].count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -115,23 +122,26 @@ class PlanVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UI
         tableView.backgroundColor = UIColor.clear
         tableView.separatorStyle = .none // OK
 
-        cell.labelPlan.text = "Caca"
+        cell.labelPlan.text = LocalData.data["eventData"]["plan"][indexPath.row]["title"].string!
 
         return cell
     }
-//
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        LocalData.Plan.Selected.latitude = LocalData.Plan.latitude[indexPath.row]
-//        LocalData.Plan.Selected.longitude = LocalData.Plan.longitude[indexPath.row]
-//        LocalData.Plan.Selected.delta = LocalData.Plan.delta[indexPath.row]
-//        let lat = Double(LocalData.Plan.Selected.latitude)!
-//        let long = Double(LocalData.Plan.Selected.longitude)!
-//        let delta = Double(LocalData.Plan.Selected.delta)!
-//        planStationMapView.setCenter(CLLocationCoordinate2D(latitude: lat, longitude: long), zoomLevel: delta, animated: true)
-//        Haptic.impact(.light).generate()
-//
-//        setMap(latitude: LocalData.Plan.Selected.latitude, longitude: LocalData.Plan.Selected.longitude, deltaLat: LocalData.Plan.Selected.delta, deltaLong: LocalData.Plan.Selected.delta)
-//    }
-//
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        
+        Selected.latitude = String(describing: LocalData.data["eventData"]["plan"][indexPath.row]["lat"].double!)
+        Selected.longitude = String(describing: LocalData.data["eventData"]["plan"][indexPath.row]["long"].double!)
+        Selected.delta = String(describing: LocalData.data["eventData"]["plan"][indexPath.row]["delta"].double!)
+
+        Haptic.impact(.light).generate()
+
+        setMap(latitude: Selected.latitude, longitude: Selected.longitude, deltaLat: Selected.delta, deltaLong: Selected.delta)
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
     
 }

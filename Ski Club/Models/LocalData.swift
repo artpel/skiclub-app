@@ -106,8 +106,8 @@ struct LocalData {
         struct Selected {
             static var delta = "0.00098"
             static var nomPlan = String()
-            static var latitude = "45.073905"
-            static var longitude = "6.701835"
+            static var latitude = "45.274077"
+            static var longitude = "6.817068"
             static var image = String()
             static var sousTitre = String()
         }

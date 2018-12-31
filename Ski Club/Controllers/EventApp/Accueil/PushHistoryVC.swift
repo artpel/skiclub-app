@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import SwiftyJSON
 import SwiftDate
 import NVActivityIndicatorView
 import Spring
@@ -27,14 +28,15 @@ class PushHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loadingView: NVActivityIndicatorView!
     
+    var localNotifs = JSON()
     
     var oTitle = ""
     var oDescription = ""
     
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         
-        
+        loadNotifs()
         
     }
     
@@ -48,24 +50,50 @@ class PushHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         
         calculateTimestamp()
         
-        print(LocalData.data["eventData"]["push"].count)
+    }
+    
+    func loadNotifs() {
         
+        ref?.child("eventData").child("push").observe(.value) {
+            (snapshot: DataSnapshot) in
+
+            if ( snapshot.value is NSNull ) {
+
+            } else {
+
+                if let value = snapshot.value {
+                    
+                    self.localNotifs = JSON(value)
+                    
+                }
+
+                DispatchQueue.main.async(execute: {
+                    self.tableView.reloadData()
+                    self.calculateTimestamp()
+                    Animations.animateCells(tableView: self.tableView)
+
+                })
+
+            }
+        }
+
     }
     
    
     func calculateTimestamp() {
-       /*
+       
         self.nextDiffInMinutes.removeAll()
         //LocalData.Push.timestamps = LocalData.Push.timestamps.reversed()
         //LocalData.Push.pushList = LocalData.Push.pushList.reversed()
         
         var i = 0
         
-        for element in LocalData.data["eventData"]["push"][i]["date"] {
+        for (key,subJson):(String, JSON) in localNotifs {
             let paris = Region(calendar: Calendars.gregorian, zone: Zones.europeParis, locale: Locales.french)
-            let date = try! DateInRegion(element.string, format: "yyyy-MM-dd HH:mm:ss", region: paris)
+            let date = try! DateInRegion(subJson["date"].string!, format: "yyyy-MM-dd HH:mm:ss", region: paris)
             let dateInParis = DateInRegion(Date(), region: paris)
-            let resultInMinutes = (dateInParis - date!)
+            let resultInMinutes = (date! - dateInParis)
+            print(resultInMinutes)
             
             if resultInMinutes != nil {
                 self.nextDiffInMinutes.append(resultInMinutes)
@@ -74,13 +102,14 @@ class PushHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             }
             i = i + 1
         }
-        */
+        
+        
     }
     
     // TableView
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return LocalData.data["eventData"]["push"].count
+        return localNotifs.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -89,16 +118,15 @@ class PushHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         tableView.backgroundColor = UIColor.clear
         tableView.separatorStyle = .none // OK
         
-        cell.push.text = LocalData.data["eventData"]["push"][indexPath.row]["content"].string
-        /*
+        cell.push.text = localNotifs[indexPath.row]["content"].string
+        
         if nextDiffInMinutes[indexPath.row] < 60 {
             cell.time.text = "Il y a \(nextDiffInMinutes[indexPath.row]) minutes"
         } else if  nextDiffInMinutes[indexPath.row] > 60 {
             cell.time.text = "Il y a plus d'une heure"
         } else {
             cell.time.text = ""
-        }*/
-        
+        }
         
         return cell
     }

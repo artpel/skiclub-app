@@ -10,9 +10,8 @@ import UIKit
 
 class ProgrammeDetailCell: UITableViewCell {
     
-    @IBOutlet weak var viewImage: UIView!
-    @IBOutlet weak var imageBla: UIImageView!
     
+    @IBOutlet weak var imageEvent: UIImageView!
     @IBOutlet weak var heureDebut: UILabel!
     @IBOutlet weak var heureFin: UILabel!
     @IBOutlet weak var nomEvent: UILabel!

@@ -9,24 +9,21 @@
 import UIKit
 import Kingfisher
 import NVActivityIndicatorView
-import Firebase
-import FirebaseDatabase
+import SwiftDate
 
 class ProgrammeVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
-    // Variable de référence à la Database Firebase
-    var ref: DatabaseReference?
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var daySelector: UISegmentedControl!
     
+    var daySelected = 0
+    
+    let paris = Region(calendar: Calendars.gregorian, zone: Zones.europeParis, locale: Locales.french)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Database initialisation
-        ref = Database.database().reference()
-        
-        self.tableView.rowHeight = 160
+        self.tableView.rowHeight = 200
         
         daySelector.addTarget(self, action: #selector(self.indexChanged(_:)), for: .valueChanged)
     }
@@ -34,11 +31,14 @@ class ProgrammeVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     @objc func indexChanged(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex{
         case 0:
-            print("iOS");
+            daySelected = 0
+            self.tableView.reloadData()
         case 1:
-            print("Android")
+            daySelected = 1
+            self.tableView.reloadData()
         case 2:
-            print("Windows Phone")
+            daySelected = 2
+            self.tableView.reloadData()
         default:
             break
         }
@@ -48,7 +48,7 @@ class ProgrammeVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     // TableView
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return LocalData.data["eventData"]["programme"][daySelected].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -57,14 +57,20 @@ class ProgrammeVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         tableView.backgroundColor = UIColor.clear
         tableView.separatorStyle = .none
         
-//        cell.nomEvent.text = LocalData.Programme.nom[indexPath.row]
-//        cell.heureDebut.text = LocalData.Programme.heureDebut[indexPath.row]
-//        cell.heureFin.text = LocalData.Programme.heureFin[indexPath.row]
-//        cell.zoneEvent.text = LocalData.Programme.zone[indexPath.row]
-//
-//        let urlOk = URL(string: LocalData.Programme.image[indexPath.row])
-//        let placeholder = UIImage(named: "pratique_placeholder.png")
-//        cell.imageBla?.kf.setImage(with: urlOk, placeholder: placeholder)
+        cell.nomEvent.text = LocalData.data["eventData"]["programme"][daySelected][indexPath.row]["title"].string
+        cell.zoneEvent.text = LocalData.data["eventData"]["programme"][daySelected][indexPath.row]["lieu"].string
+        
+        let url = URL(string: LocalData.data["eventData"]["programme"][daySelected][indexPath.row]["img"].string!)
+        let placeholder = UIImage(named: "placeholder.png")
+        cell.imageEvent?.kf.setImage(with: url, placeholder: placeholder)
+        
+        let dateDebut = try! DateInRegion(LocalData.data["eventData"]["programme"][daySelected][indexPath.row]["dateDebut"].string!, format: "yyyy-MM-dd HH:mm:ss", region: paris)
+        let dateFin = try! DateInRegion(LocalData.data["eventData"]["programme"][daySelected][indexPath.row]["dateFin"].string!, format: "yyyy-MM-dd HH:mm:ss", region: paris)
+        
+        cell.heureDebut.text = String(describing: dateDebut!.hour) + ":" + String(describing: dateDebut!.minute)
+        cell.heureFin.text = String(describing: dateFin!.hour) + ":" + String(describing: dateFin!.minute)
+        
+        
         
         return cell
     }
