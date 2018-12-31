@@ -44,7 +44,7 @@ class PushHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         // Database initialisation
         ref = Database.database().reference()
         
-        tableView.rowHeight = 80
+        tableView.rowHeight = 75
         
         calculateTimestamp()
         
