@@ -38,7 +38,7 @@ class RoundShadowView: UIView {
     
     func addShadow(shadowColor: CGColor = UIColor.black.cgColor,
                    shadowOffset: CGSize = CGSize(width: 1.0, height: 2.0),
-                   shadowOpacity: Float = 0.4,
+                   shadowOpacity: Float = 0.8,
                    shadowRadius: CGFloat = 3.0) {
         layer.shadowColor = shadowColor
         layer.shadowOffset = shadowOffset

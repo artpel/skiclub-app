@@ -16,7 +16,6 @@
                 <navigationController id="Yy5-gH-hfG" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Pratique" image="icoRocket" selectedImage="icoRocket" id="Wg3-VV-AAd"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4xt-nx-wMu">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.75294117650000003" green="0.0" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
@@ -34,7 +33,6 @@
                 <navigationController id="h12-jj-r7d" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Programme" image="icoProgramme" id="vwa-YK-GiL"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VA3-pf-kTM">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.75294117650000003" green="0.0" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -56,7 +54,6 @@
                 <navigationController id="Auy-06-WJE" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Partenaires" image="icoPartenaires" selectedImage="icoPartenaires" id="4L1-0g-dvD"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="557-0c-fHm">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -401,7 +398,6 @@
                 <navigationController id="8Ex-2z-zTP" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Accueil" image="icoAccueil" selectedImage="icoAccueil" id="riQ-3e-SiK"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XCG-Kj-sBi">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -450,46 +446,7 @@
                                                     <real key="NSBaselineOffset" value="-2"/>
                                                     <color key="NSColor" red="0.061162926256656647" green="0.13223972916603088" blue="0.18824288249015808" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <font key="NSFont" size="21" name="Kremlin"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                        <tabStops>
-                                                            <textTab alignment="left" location="28">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="56">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="84">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="112">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="140">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="168">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="196">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="224">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="252">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="280">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="308">
-                                                                <options/>
-                                                            </textTab>
-                                                            <textTab alignment="left" location="336">
-                                                                <options/>
-                                                            </textTab>
-                                                        </tabStops>
-                                                    </paragraphStyle>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
@@ -581,7 +538,6 @@
                 <navigationController id="IBy-Di-JwW" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Plan" image="icoMap" selectedImage="icoMap" id="bro-rR-xX3"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Qup-BP-UEH">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -1879,7 +1835,7 @@
             <objects>
                 <viewController id="1a8-fb-OBw" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yCd-X6-C5a">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="233"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VZ5-Co-JNy">
@@ -2029,7 +1985,7 @@
             <objects>
                 <viewController id="kET-hC-7Rt" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wcE-PQ-cpH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="178"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XnC-WG-RCw" customClass="SpringView" customModule="Spring">

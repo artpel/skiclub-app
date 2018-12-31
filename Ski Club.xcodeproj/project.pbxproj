@@ -23,9 +23,12 @@
 		7635FCCF2133FEF7000ACCB1 /* LocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7635FCCE2133FEF7000ACCB1 /* LocalData.swift */; };
 		7635FCD12134084C000ACCB1 /* logoSkiClub.png in Resources */ = {isa = PBXBuildFile; fileRef = 7635FCD02134084B000ACCB1 /* logoSkiClub.png */; };
 		763DB3CC216B94D200B8EC5E /* EventBackup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 763DB3CB216B94D200B8EC5E /* EventBackup.storyboard */; };
+		766DBCEE21DA0AF0004626A4 /* PlanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766DBCED21DA0AF0004626A4 /* PlanCell.swift */; };
 		767466B1213BDF1400BAA81E /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 767466B0213BDF1300BAA81E /* placeholder.png */; };
 		7697175421D68DD500C13FF0 /* AccueilVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7697175321D68DD500C13FF0 /* AccueilVC.swift */; };
 		7697175721D68E2800C13FF0 /* GlobalHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7697175621D68E2800C13FF0 /* GlobalHelpers.swift */; };
+		76B6CF6B21DA12D700071D2D /* PratiqueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B6CF6A21DA12D700071D2D /* PratiqueCell.swift */; };
+		76B6CF6D21DA133300071D2D /* PratiqueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B6CF6C21DA133300071D2D /* PratiqueVC.swift */; };
 		76F8E49F21D7A94200050CE7 /* PushHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F8E49E21D7A94200050CE7 /* PushHistoryVC.swift */; };
 		76F8E4A121D7A94D00050CE7 /* NextEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F8E4A021D7A94D00050CE7 /* NextEventVC.swift */; };
 		76F8E4A321D7AE1900050CE7 /* kremlin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76F8E4A221D7AE1900050CE7 /* kremlin.ttf */; };
@@ -87,9 +90,12 @@
 		7635FCCE2133FEF7000ACCB1 /* LocalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalData.swift; sourceTree = "<group>"; };
 		7635FCD02134084B000ACCB1 /* logoSkiClub.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoSkiClub.png; sourceTree = "<group>"; };
 		763DB3CB216B94D200B8EC5E /* EventBackup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventBackup.storyboard; sourceTree = "<group>"; };
+		766DBCED21DA0AF0004626A4 /* PlanCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanCell.swift; sourceTree = "<group>"; };
 		767466B0213BDF1300BAA81E /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		7697175321D68DD500C13FF0 /* AccueilVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccueilVC.swift; sourceTree = "<group>"; };
 		7697175621D68E2800C13FF0 /* GlobalHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalHelpers.swift; sourceTree = "<group>"; };
+		76B6CF6A21DA12D700071D2D /* PratiqueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PratiqueCell.swift; sourceTree = "<group>"; };
+		76B6CF6C21DA133300071D2D /* PratiqueVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PratiqueVC.swift; sourceTree = "<group>"; };
 		76F8E49E21D7A94200050CE7 /* PushHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushHistoryVC.swift; sourceTree = "<group>"; };
 		76F8E4A021D7A94D00050CE7 /* NextEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextEventVC.swift; sourceTree = "<group>"; };
 		76F8E4A221D7AE1900050CE7 /* kremlin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = kremlin.ttf; sourceTree = "<group>"; };
@@ -166,9 +172,11 @@
 		76050A932174E198009A5F5E /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				76B6CF6A21DA12D700071D2D /* PratiqueCell.swift */,
 				76F8E4A421D7BF7F00050CE7 /* PushCell.swift */,
 				7619122A2133D13400DFA118 /* EventListCell.swift */,
 				76FDB23B21D94C8D00933C21 /* ProgrammeDetailCell.swift */,
+				766DBCED21DA0AF0004626A4 /* PlanCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -308,6 +316,7 @@
 		76F8E49A21D7A8F400050CE7 /* Pratique */ = {
 			isa = PBXGroup;
 			children = (
+				76B6CF6C21DA133300071D2D /* PratiqueVC.swift */,
 			);
 			path = Pratique;
 			sourceTree = "<group>";
@@ -542,14 +551,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				76FDB23A21D9498100933C21 /* ProgrammeVC.swift in Sources */,
+				76B6CF6B21DA12D700071D2D /* PratiqueCell.swift in Sources */,
 				76FDB23C21D94C8D00933C21 /* ProgrammeDetailCell.swift in Sources */,
 				7697175721D68E2800C13FF0 /* GlobalHelpers.swift in Sources */,
 				7635FCCF2133FEF7000ACCB1 /* LocalData.swift in Sources */,
+				766DBCEE21DA0AF0004626A4 /* PlanCell.swift in Sources */,
 				7697175421D68DD500C13FF0 /* AccueilVC.swift in Sources */,
 				7619122B2133D13400DFA118 /* EventListCell.swift in Sources */,
 				76F8E4A121D7A94D00050CE7 /* NextEventVC.swift in Sources */,
 				76F8E49F21D7A94200050CE7 /* PushHistoryVC.swift in Sources */,
 				7635FCC62133F429000ACCB1 /* Animations.swift in Sources */,
+				76B6CF6D21DA133300071D2D /* PratiqueVC.swift in Sources */,
 				761912142133C65C00DFA118 /* AppDelegate.swift in Sources */,
 				7635FCCD2133FD27000ACCB1 /* EventDetailVC.swift in Sources */,
 				76F8E4A521D7BF7F00050CE7 /* PushCell.swift in Sources */,

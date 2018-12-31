@@ -26,7 +26,7 @@ class ProgrammeVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         // Database initialisation
         ref = Database.database().reference()
         
-        self.tableView.rowHeight = 115
+        self.tableView.rowHeight = 160
         
         daySelector.addTarget(self, action: #selector(self.indexChanged(_:)), for: .valueChanged)
     }

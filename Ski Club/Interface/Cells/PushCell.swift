@@ -15,7 +15,7 @@ class PushCell: UITableViewCell {
     @IBOutlet weak var push: UILabel!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var chevron: UIButton!
-    
+    @IBOutlet weak var clock: UIButton!
     
     
     override func awakeFromNib() {
@@ -25,7 +25,8 @@ class PushCell: UITableViewCell {
         chevron.titleLabel?.font = UIFont.fontAwesome(ofSize: 15, style: .solid)
         chevron.setTitle(String.fontAwesomeIcon(name: .chevronRight), for: .normal)
         
-        
+        clock.titleLabel?.font = UIFont.fontAwesome(ofSize: 15, style: .regular)
+        clock.setTitle(String.fontAwesomeIcon(name: .clock), for: .normal)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

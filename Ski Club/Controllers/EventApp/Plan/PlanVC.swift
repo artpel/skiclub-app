@@ -14,10 +14,10 @@ import Spring
 import Kingfisher
 import NVActivityIndicatorView
 
-class PlanVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+class PlanVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UITableViewDelegate, UITableViewDataSource {
     
     // IB Outlets
-    @IBOutlet weak var mapCollection: UITableView!
+    @IBOutlet weak var listPlan: UITableView!
     
     @IBOutlet weak var planStation: MKMapView!
     
@@ -26,28 +26,12 @@ class PlanVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //setImageInTitle()
-        
-//        // Do any additional setup after loading the view.
-//        mapCollection.backgroundColor = UIColor.clear
-//        self.mapCollection.rowHeight = 100
-//        mapCollection.isHidden = true
-        
-        
+    
+        self.listPlan.rowHeight = 70
+    
         // setMap(latitude: LocalData.Plan.Selected.latitude, longitude: LocalData.Plan.Selected.longitude, deltaLat: LocalData.Plan.Selected.delta, deltaLong: LocalData.Plan.Selected.delta)
         startLocationServices()
         
-    }
-    
-    func setImageInTitle() {
-        var titleView : UIImageView
-        // set the dimensions you want here
-        titleView = UIImageView(frame:CGRect(x:-10,y:0,width:40,height:40))
-        // Set how do you want to maintain the aspect
-        titleView.contentMode = .scaleAspectFit
-        titleView.image = UIImage(named: "header_adhenarcos.png")
-        self.navigationItem.titleView = titleView
     }
     
     func startLocationServices() {
@@ -120,28 +104,21 @@ class PlanVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 //
 //    // Table View
 //
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return LocalData.Plan.nomPlan.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//        let cell = mapCollection.dequeueReusableCell(withIdentifier: "PlanCell", for: indexPath) as! PlanCell
-//        cell.selectionStyle = .none
-//        tableView.backgroundColor = UIColor.clear
-//        tableView.separatorStyle = .none // OK
-//
-//        cell.titreCell.text = LocalData.Plan.nomPlan[indexPath.row]
-//        cell.sousTitre.text = LocalData.Plan.sousTitre[indexPath.row]
-//
-//        let urlOk = URL(string: LocalData.Plan.image[indexPath.row])
-//        let placeholder = UIImage(named: "partenaires_placeholder_white.png")
-//        cell.imageCell.kf.setImage(with: urlOk, placeholder: placeholder)
-//
-//
-//
-//        return cell
-//    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        let cell = listPlan.dequeueReusableCell(withIdentifier: "PlanCell", for: indexPath) as! PlanCell
+        cell.selectionStyle = .none
+        tableView.backgroundColor = UIColor.clear
+        tableView.separatorStyle = .none // OK
+
+        cell.labelPlan.text = "Caca"
+
+        return cell
+    }
 //
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        LocalData.Plan.Selected.latitude = LocalData.Plan.latitude[indexPath.row]

@@ -14,10 +14,12 @@ import NVActivityIndicatorView
 import Spring
 import Kingfisher
 import ChameleonFramework
+import FontAwesome_swift
 
 class NextEventVC: UIViewController {
     
     @IBOutlet weak var timeImage: UIImageView!
+    @IBOutlet weak var clockButton: UIButton!
     
     // Variable de référence à la Database Firebase
     var ref: DatabaseReference?
@@ -33,17 +35,14 @@ class NextEventVC: UIViewController {
     @IBOutlet weak var zoneEvent: UILabel!
     @IBOutlet weak var timeEvent: UILabel!
     @IBOutlet weak var imageEvent: UIImageView!
-    @IBOutlet weak var viewNextEvent: SpringView!
-    @IBOutlet weak var activityIndicator: NVActivityIndicatorView!
-    
-    @IBOutlet weak var masqueImage: UIView!
+  
     
     override func viewDidAppear(_ animated: Bool) {
-        loadData()
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        viewNextEvent.isHidden = true
+        
     }
     
     override func viewDidLoad() {
@@ -52,7 +51,8 @@ class NextEventVC: UIViewController {
         // Database initialisation
         ref = Database.database().reference()
         
-        viewNextEvent.isHidden = true
+        clockButton.titleLabel?.font = UIFont.fontAwesome(ofSize: 30, style: .regular)
+        clockButton.setTitle(String.fontAwesomeIcon(name: .clock), for: .normal)
         
     }
     
@@ -120,73 +120,20 @@ class NextEventVC: UIViewController {
             self.zoneEvent.text = LocalData.Programme.zone[index]
             self.timeEvent.text = "À \(LocalData.Programme.heureDebut[index])"
             
-            self.activityIndicator.stopAnimating()
-            Animations.shake(viewGiven: viewNextEvent)
+//            self.activityIndicator.stopAnimating()
+//            Animations.shake(viewGiven: viewNextEvent)
         } else {
             
             self.nomEvent.text = "Erreur, l'event est fini"
-            self.activityIndicator.stopAnimating()
-            
-            Animations.shake(viewGiven: viewNextEvent)
+//            self.activityIndicator.stopAnimating()
+//            
+//            Animations.shake(viewGiven: viewNextEvent)
         }
         
     }
     
     
-    func loadData() {
-        
-        self.activityIndicator.startAnimating()
-        
-        let paris = Region(calendar: Calendars.gregorian, zone: Zones.europeParis, locale: Locales.french)
-        let dateInParis = DateInRegion(Date(), region: paris)
-        var jourEvent = String()
-        if dateInParis.day == 19 {
-            jourEvent = "jour2"
-        } else if dateInParis.day == 20 {
-            jourEvent = "jour3"
-        }  else if dateInParis.day == 21 {
-            jourEvent = "jour4"
-        } else {
-            jourEvent = "jour1"
-        }
-        
-        ref?.child("programme").child(jourEvent).observe(.value) {
-            (snapshot: DataSnapshot) in
-            
-            if ( snapshot.value is NSNull ) {
-                // self.noInternetConnection()
-            } else {
-                
-                LocalData.Programme.nom.removeAll()
-                LocalData.Programme.zone.removeAll()
-                LocalData.Programme.image.removeAll()
-                LocalData.Programme.heureDebut.removeAll()
-                LocalData.Programme.heureFin.removeAll()
-                LocalData.Programme.date.removeAll()
-                
-                for child in snapshot.children {
-                    let snap = child as! DataSnapshot //each child is a snapshot
-                    let dict = snap.value as! [String: Any] // the value is a dict
-                    LocalData.Programme.nom.append(dict["nom"] as! String)
-                    LocalData.Programme.zone.append(dict["zone"] as! String)
-                    LocalData.Programme.image.append(dict["image"] as! String)
-                    LocalData.Programme.heureDebut.append(dict["heureDebut"] as! String)
-                    LocalData.Programme.heureFin.append(dict["heureFin"] as! String)
-                    LocalData.Programme.date.append(dict["date"] as! String)
-                    
-                    
-                }
-                
-                DispatchQueue.main.async(execute: {
-                    
-                    self.checkDate()
-                    
-                })
-                
-            }
-        }
-        
-    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
