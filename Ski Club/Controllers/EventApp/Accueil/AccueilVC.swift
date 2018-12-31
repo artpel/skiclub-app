@@ -7,80 +7,51 @@
 //
 
 import UIKit
-import Spring
-import Firebase
-import FirebaseDatabase
 import Kingfisher
 import Haptica
 import CFAlertViewController
 import ChameleonFramework
-import RevealingSplashView
 
 class AccueilVC: UIViewController {
     
-    // Variable de référence à la Database Firebase
-    var ref: DatabaseReference?
-    
-    let navigat = UINavigationBar()
-    
     @IBOutlet weak var chevron: UIButton!
-    // Introduction
-    
+
     @IBOutlet weak var bienvenue: RoundShadowView!
     
-    var messageDeBienvenue = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. \n Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
-    /*
-    lazy var bulletinManager: BulletinManager =  {
-        
-        let page = PageBulletinItem(title: "Bienvenue aux Neptuniades 2018 !")
-        page.descriptionText = messageDeBienvenue
-        page.actionButtonTitle = "C'est parti"
-        page.isDismissable = true
-        page.actionHandler = { (item: PageBulletinItem) in
-            self.bulletinManager.dismissBulletin(animated: true)
-            Haptic.notification(.success).generate()
-            self.navigat.isHidden = false
-        }
-        
-        let rootItem: BulletinItem = page
-        return BulletinManager(rootItem: rootItem)
-        
-    }()*/
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
-        //self.noInternetConnection()
-        
-    }
- 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Database initialisation
-        ref = Database.database().reference()
-        
+    
         chevron.titleLabel?.font = UIFont.fontAwesome(ofSize: 15, style: .solid)
         chevron.setTitle(String.fontAwesomeIcon(name: .chevronRight), for: .normal)
       
-        // Image dans la barre de titre
-        // UI.setImageInTitle(nav: self.navigationItem)
-        
         let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.checkAction))
         self.bienvenue.addGestureRecognizer(gesture)
-        
-        
-        
+     
     }
     
     @objc func checkAction(sender : UITapGestureRecognizer) {
         
         Haptic.impact(.medium).generate()
         
-        //bulletinManager.prepare()
-        navigat.isHidden = true
-        let  navController = self.tabBarController
-        //bulletinManager.presentBulletin(above: navController!)
+        let alertController = CFAlertViewController(title: "Bienvenue à l'Adhémar",
+                                                    message: LocalData.data["eventData"]["messageAccueil"].string!,
+                                                    textAlignment: .left,
+                                                    preferredStyle: .notification,
+                                                    didDismissAlertHandler: nil)
+       
+        let defaultAction = CFAlertAction(title: "Merci",
+                                          style: .Default,
+                                          alignment: .right,
+                                          backgroundColor: UIColor(red: CGFloat(46.0 / 255.0), green: CGFloat(204.0 / 255.0), blue: CGFloat(113.0 / 255.0), alpha: CGFloat(1)),
+                                          textColor: nil,
+                                          handler: { (action) in
+
+        })
         
+       
+        alertController.addAction(defaultAction)
+        present(alertController, animated: true, completion: nil)
+
     }
 
     override func didReceiveMemoryWarning() {

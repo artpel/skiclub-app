@@ -20,19 +20,13 @@ import ChameleonFramework
 
 class PushHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    // Variable de référence à la Database Firebase
     var ref: DatabaseReference?
     
-    var nextDiffInMinutes = [Double]()
+    var nextDiffInMinutes = [Int]()
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var loadingView: NVActivityIndicatorView!
     
-    var localNotifs = JSON()
-    
-    var oTitle = ""
-    var oDescription = ""
-    
+    var localNotifs = [[String:String]]()
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -56,6 +50,8 @@ class PushHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         
         ref?.child("eventData").child("push").observe(.value) {
             (snapshot: DataSnapshot) in
+            
+            self.localNotifs.removeAll()
 
             if ( snapshot.value is NSNull ) {
 
@@ -63,10 +59,17 @@ class PushHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
 
                 if let value = snapshot.value {
                     
-                    self.localNotifs = JSON(value)
+                    let j = JSON(value)
+                    
+                    for (key,subJson):(String, JSON) in j {
+                        let titre = subJson["content"].string!
+                        let heure = subJson["date"].string!
+                        
+                        self.localNotifs.insert(["titre": titre, "date": heure], at: 0)
+                    }
                     
                 }
-
+                
                 DispatchQueue.main.async(execute: {
                     self.tableView.reloadData()
                     self.calculateTimestamp()
@@ -79,28 +82,21 @@ class PushHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
 
     }
     
+
+    
    
     func calculateTimestamp() {
        
         self.nextDiffInMinutes.removeAll()
-        //LocalData.Push.timestamps = LocalData.Push.timestamps.reversed()
-        //LocalData.Push.pushList = LocalData.Push.pushList.reversed()
         
-        var i = 0
-        
-        for (key,subJson):(String, JSON) in localNotifs {
+        for element in localNotifs {
             let paris = Region(calendar: Calendars.gregorian, zone: Zones.europeParis, locale: Locales.french)
-            let date = try! DateInRegion(subJson["date"].string!, format: "yyyy-MM-dd HH:mm:ss", region: paris)
+            let date = try! DateInRegion(element["date"]!, format: "yyyy-MM-dd HH:mm:ss", region: paris)
             let dateInParis = DateInRegion(Date(), region: paris)
-            let resultInMinutes = (date! - dateInParis)
-            print(resultInMinutes)
+            let resultInMinutes = date!.getInterval(toDate: dateInParis, component: .minute)
             
-            if resultInMinutes != nil {
-                self.nextDiffInMinutes.append(resultInMinutes)
-            } else {
-                self.nextDiffInMinutes.append(0)
-            }
-            i = i + 1
+            self.nextDiffInMinutes.append(Int(resultInMinutes))
+        
         }
         
         
@@ -118,7 +114,7 @@ class PushHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         tableView.backgroundColor = UIColor.clear
         tableView.separatorStyle = .none // OK
         
-        cell.push.text = localNotifs[indexPath.row]["content"].string
+        cell.push.text = localNotifs[indexPath.row]["titre"]
         
         if nextDiffInMinutes[indexPath.row] < 60 {
             cell.time.text = "Il y a \(nextDiffInMinutes[indexPath.row]) minutes"
@@ -133,70 +129,36 @@ class PushHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        var titre = ""
         
         if nextDiffInMinutes[indexPath.row] < 60 {
-            
-            oTitle = "Notification il y a \(nextDiffInMinutes[indexPath.row]) mn"
-            oDescription = LocalData.Push.pushList[indexPath.row]
-            Haptic.impact(.medium).generate()
-            
-            
-            // Create Alet View Controller
-            let alertController = CFAlertViewController(title: oTitle,
-                                                        message: "\(oDescription) \r\n\r\n\r\n",
-                textAlignment: .left,
-                preferredStyle: .actionSheet,
-                didDismissAlertHandler: nil)
-            
-            // Create Upgrade Action
-            let defaultAction = CFAlertAction(title: "Ça roule !",
-                                              style: .Default,
-                                              alignment: .right,
-                                              backgroundColor: UIColor(hexString:"C00011"),
-                                              textColor: UIColor(hexString:"ffffff"),
-                                              handler: { (action) in
-                                                print("Button with title '" + action.title! + "' tapped")
-            })
-            
-            // Add Action Button Into Alert
-            alertController.addAction(defaultAction)
-            
-            // Present Alert View Controller
-            present(alertController, animated: true, completion: nil)
-            
+            titre = "Notification il y a \(nextDiffInMinutes[indexPath.row]) mn"
         } else {
-            
-            
-            oTitle = "Notification il y a plus d'une heure"
-            oDescription = LocalData.Push.pushList[indexPath.row]
-            
-            Haptic.impact(.medium).generate()
-            
-            // Create Alet View Controller
-            let alertController = CFAlertViewController(title: oTitle,
-                                                        message: oDescription,
-                                                        textAlignment: .left,
-                                                        preferredStyle: .actionSheet,
-                                                        didDismissAlertHandler: nil)
-            
-            // Create Upgrade Action
-            let defaultAction = CFAlertAction(title: "Ça roule !",
-                                              style: .Default,
-                                              alignment: .right,
-                                              backgroundColor: UIColor(hexString:"C00011"),
-                                              textColor: UIColor(hexString:"ffffff"),
-                                              handler: { (action) in
-                                                Haptic.notification(.success).generate()
-            })
-            
-            // Add Action Button Into Alert
-            alertController.addAction(defaultAction)
-            
-            // Present Alert View Controller
-            present(alertController, animated: true, completion: nil)
+            titre = "Notification il y a plus d'une heure"
         }
         
+        // Create Alet View Controller
+        let alertController = CFAlertViewController(title: titre,
+                                                    message: "\(localNotifs[indexPath.row]["titre"]!) \r\n\r\n\r\n",
+            textAlignment: .left,
+            preferredStyle: .actionSheet,
+            didDismissAlertHandler: nil)
         
+        // Create Upgrade Action
+        let defaultAction = CFAlertAction(title: "Ça roule !",
+                                          style: .Default,
+                                          alignment: .right,
+                                          backgroundColor: UIColor(hexString:"C00011"),
+                                          textColor: UIColor(hexString:"ffffff"),
+                                          handler: { (action) in
+                                            print("Button with title '" + action.title! + "' tapped")
+        })
+        
+        // Add Action Button Into Alert
+        alertController.addAction(defaultAction)
+        
+        // Present Alert View Controller
+        present(alertController, animated: true, completion: nil)
         
     }
     
