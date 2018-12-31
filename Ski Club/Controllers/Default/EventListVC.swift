@@ -14,6 +14,7 @@ import Kingfisher
 import DeckTransition
 import Haptica
 import NVActivityIndicatorView
+import Hero
 
 class EventListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -22,22 +23,29 @@ class EventListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     
     @IBOutlet weak var eventList: UITableView!
     @IBOutlet weak var activityLoader: NVActivityIndicatorView!
+    @IBOutlet weak var titleEvent: UILabel!
+    @IBOutlet weak var logoSkiClub: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         ref = Database.database().reference()
-
+        
         loadData()
         
         eventList.isHidden = true
+        titleEvent.isHidden = true
+        logoSkiClub.isHidden = true
     
     }
     
     func redirectToEvent() {
         let storyboard = UIStoryboard(name: "Event", bundle: nil)
         if let tabbar = (storyboard.instantiateViewController(withIdentifier: "EventTabBar") as? UITabBarController) {
-            self.present(tabbar, animated: true, completion: nil)
+            
+            tabbar.hero.modalAnimationType = .zoom
+            self.hero.replaceViewController(with: tabbar)
+        
         }
     }
     
@@ -45,8 +53,7 @@ class EventListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         
         activityLoader.startAnimating()
         
-        ref?.observe(.value) {
-            (snapshot: DataSnapshot) in
+        ref?.observeSingleEvent(of: .value, with: { (snapshot) in
             
             if ( snapshot.value is NSNull ) {
                 
@@ -62,15 +69,47 @@ class EventListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
                     if LocalData.data["event"] == false {
                         self.redirectToEvent()
                     }
-                        
+                    
                     self.activityLoader.stopAnimating()
                     self.eventList.isHidden = false
+                    self.titleEvent.isHidden = false
+                    self.logoSkiClub.isHidden = false
                     Animations.animateCells(tableView: self.eventList)
-        
+                    
                 })
                 
             }
-        }
+            
+        })
+        
+//        ref?.observe(.value) {
+//            (snapshot: DataSnapshot) in
+//
+//            if ( snapshot.value is NSNull ) {
+//
+//            } else {
+//
+//                if let value = snapshot.value as? [String: AnyObject] {
+//                    LocalData.data = JSON(value)
+//                }
+//
+//                DispatchQueue.main.async(execute: {
+//                    self.eventList.reloadData()
+//
+//                    if LocalData.data["event"] == false {
+//                        self.redirectToEvent()
+//                    }
+//
+//                    self.activityLoader.stopAnimating()
+//                    self.eventList.isHidden = false
+//                    self.titleEvent.isHidden = false
+//                    self.logoSkiClub.isHidden = false
+//                    Animations.animateCells(tableView: self.eventList)
+//
+//                })
+//
+//            }
+//        }
         
     }
     

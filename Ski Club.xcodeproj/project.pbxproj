@@ -22,7 +22,6 @@
 		7635FCCD2133FD27000ACCB1 /* EventDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7635FCCC2133FD27000ACCB1 /* EventDetailVC.swift */; };
 		7635FCCF2133FEF7000ACCB1 /* LocalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7635FCCE2133FEF7000ACCB1 /* LocalData.swift */; };
 		7635FCD12134084C000ACCB1 /* logoSkiClub.png in Resources */ = {isa = PBXBuildFile; fileRef = 7635FCD02134084B000ACCB1 /* logoSkiClub.png */; };
-		763DB3CC216B94D200B8EC5E /* EventBackup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 763DB3CB216B94D200B8EC5E /* EventBackup.storyboard */; };
 		766DBCEE21DA0AF0004626A4 /* PlanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766DBCED21DA0AF0004626A4 /* PlanCell.swift */; };
 		767466B1213BDF1400BAA81E /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 767466B0213BDF1300BAA81E /* placeholder.png */; };
 		7697175421D68DD500C13FF0 /* AccueilVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7697175321D68DD500C13FF0 /* AccueilVC.swift */; };
@@ -31,6 +30,7 @@
 		76B6CF6D21DA133300071D2D /* PratiqueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B6CF6C21DA133300071D2D /* PratiqueVC.swift */; };
 		76B6CF6F21DA177C00071D2D /* PartenairesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B6CF6E21DA177C00071D2D /* PartenairesVC.swift */; };
 		76B6CF7121DA180700071D2D /* PartenairesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B6CF7021DA180700071D2D /* PartenairesCell.swift */; };
+		76CDCB9521DA221A00E44368 /* FirebaseFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CDCB9421DA221A00E44368 /* FirebaseFunctions.swift */; };
 		76F8E49F21D7A94200050CE7 /* PushHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F8E49E21D7A94200050CE7 /* PushHistoryVC.swift */; };
 		76F8E4A121D7A94D00050CE7 /* NextEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F8E4A021D7A94D00050CE7 /* NextEventVC.swift */; };
 		76F8E4A321D7AE1900050CE7 /* kremlin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76F8E4A221D7AE1900050CE7 /* kremlin.ttf */; };
@@ -91,7 +91,6 @@
 		7635FCCC2133FD27000ACCB1 /* EventDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailVC.swift; sourceTree = "<group>"; };
 		7635FCCE2133FEF7000ACCB1 /* LocalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalData.swift; sourceTree = "<group>"; };
 		7635FCD02134084B000ACCB1 /* logoSkiClub.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoSkiClub.png; sourceTree = "<group>"; };
-		763DB3CB216B94D200B8EC5E /* EventBackup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventBackup.storyboard; sourceTree = "<group>"; };
 		766DBCED21DA0AF0004626A4 /* PlanCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanCell.swift; sourceTree = "<group>"; };
 		767466B0213BDF1300BAA81E /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		7697175321D68DD500C13FF0 /* AccueilVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccueilVC.swift; sourceTree = "<group>"; };
@@ -100,6 +99,7 @@
 		76B6CF6C21DA133300071D2D /* PratiqueVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PratiqueVC.swift; sourceTree = "<group>"; };
 		76B6CF6E21DA177C00071D2D /* PartenairesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartenairesVC.swift; sourceTree = "<group>"; };
 		76B6CF7021DA180700071D2D /* PartenairesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartenairesCell.swift; sourceTree = "<group>"; };
+		76CDCB9421DA221A00E44368 /* FirebaseFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFunctions.swift; sourceTree = "<group>"; };
 		76F8E49E21D7A94200050CE7 /* PushHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushHistoryVC.swift; sourceTree = "<group>"; };
 		76F8E4A021D7A94D00050CE7 /* NextEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextEventVC.swift; sourceTree = "<group>"; };
 		76F8E4A221D7AE1900050CE7 /* kremlin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = kremlin.ttf; sourceTree = "<group>"; };
@@ -226,7 +226,6 @@
 				76050A732174DF57009A5F5E /* Media */,
 				7619121C2133C65E00DFA118 /* Assets.xcassets */,
 				761912192133C65C00DFA118 /* Main.storyboard */,
-				763DB3CB216B94D200B8EC5E /* EventBackup.storyboard */,
 				76F8E4A821D7C61300050CE7 /* Event.storyboard */,
 				7619121E2133C65E00DFA118 /* LaunchScreen.storyboard */,
 				761912212133C65E00DFA118 /* Info.plist */,
@@ -288,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				7697175621D68E2800C13FF0 /* GlobalHelpers.swift */,
+				76CDCB9421DA221A00E44368 /* FirebaseFunctions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -439,7 +439,6 @@
 			files = (
 				761912202133C65E00DFA118 /* LaunchScreen.storyboard in Resources */,
 				76F8E4A321D7AE1900050CE7 /* kremlin.ttf in Resources */,
-				763DB3CC216B94D200B8EC5E /* EventBackup.storyboard in Resources */,
 				76F8E4A921D7C61300050CE7 /* Event.storyboard in Resources */,
 				761912282133CF9B00DFA118 /* GoogleService-Info.plist in Resources */,
 				7635FCCB2133F6E5000ACCB1 /* ActaDisplay.otf in Resources */,
@@ -475,11 +474,11 @@
 				"${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Haptica/Haptica.framework",
+				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/LGButton/LGButton.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
-				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/RevealingSplashView/RevealingSplashView.framework",
 				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
@@ -496,11 +495,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesome_swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Haptica.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LGButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealingSplashView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
@@ -564,6 +563,7 @@
 				7635FCCF2133FEF7000ACCB1 /* LocalData.swift in Sources */,
 				766DBCEE21DA0AF0004626A4 /* PlanCell.swift in Sources */,
 				7697175421D68DD500C13FF0 /* AccueilVC.swift in Sources */,
+				76CDCB9521DA221A00E44368 /* FirebaseFunctions.swift in Sources */,
 				7619122B2133D13400DFA118 /* EventListCell.swift in Sources */,
 				76F8E4A121D7A94D00050CE7 /* NextEventVC.swift in Sources */,
 				76F8E49F21D7A94200050CE7 /* PushHistoryVC.swift in Sources */,

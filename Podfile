@@ -26,8 +26,8 @@ target 'Ski Club' do
     pod 'LGButton'
     pod 'SwiftDate'
     pod 'Spring'
+    pod 'Hero'
     pod 'CFAlertViewController'
-    pod 'ReachabilitySwift'
     pod 'FontAwesome.swift'
     
     post_install do |installer|

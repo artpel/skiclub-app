@@ -107,10 +107,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gxa-hs-iCb" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
-                                <rect key="frame" x="162" y="308" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gxa-hs-iCb" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                                <rect key="frame" x="162.5" y="308.5" width="50" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="HJ8-JQ-tSn"/>
+                                    <constraint firstAttribute="width" constant="50" id="adu-LD-8Qu"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="color">
                                         <color key="value" red="0.81568627450980391" green="0.17254901960784313" blue="0.16078431372549021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -133,6 +136,8 @@
                             <constraint firstItem="euw-u2-3WW" firstAttribute="leading" secondItem="nbV-lb-OfG" secondAttribute="leading" constant="11" id="7we-1s-Xdf"/>
                             <constraint firstItem="OMf-6Z-NOA" firstAttribute="leading" secondItem="nbV-lb-OfG" secondAttribute="leading" id="915-g7-B1d"/>
                             <constraint firstItem="yyw-E7-OS7" firstAttribute="leading" secondItem="nbV-lb-OfG" secondAttribute="leading" constant="16" id="F8C-ot-Asj"/>
+                            <constraint firstItem="Gxa-hs-iCb" firstAttribute="centerY" secondItem="zHS-gu-syo" secondAttribute="centerY" id="H9D-ok-ny2"/>
+                            <constraint firstItem="Gxa-hs-iCb" firstAttribute="centerX" secondItem="zHS-gu-syo" secondAttribute="centerX" id="Nyb-yD-k2V"/>
                             <constraint firstItem="OMf-6Z-NOA" firstAttribute="bottom" secondItem="nbV-lb-OfG" secondAttribute="bottom" id="QhE-89-8TY"/>
                             <constraint firstItem="OMf-6Z-NOA" firstAttribute="trailing" secondItem="nbV-lb-OfG" secondAttribute="trailing" id="V8c-lO-UWk"/>
                             <constraint firstItem="euw-u2-3WW" firstAttribute="top" secondItem="nbV-lb-OfG" secondAttribute="top" constant="4" id="ghW-Vt-yuQ"/>
@@ -140,9 +145,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nbV-lb-OfG"/>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="activityLoader" destination="Gxa-hs-iCb" id="NVU-Jk-a8w"/>
                         <outlet property="eventList" destination="OMf-6Z-NOA" id="QLN-2u-5ZL"/>
+                        <outlet property="logoSkiClub" destination="euw-u2-3WW" id="19T-Hj-9FH"/>
+                        <outlet property="titleEvent" destination="yyw-E7-OS7" id="YD5-rF-k0f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SzU-9l-z3a" userLabel="First Responder" sceneMemberID="firstResponder"/>

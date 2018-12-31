@@ -225,6 +225,9 @@
                         <color key="tintColor" red="0.062745098040000002" green="0.1333333333" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="selectedImageTintColor" red="0.062745098040000002" green="0.1333333333" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="4H8-Oy-TKA" kind="relationship" relationship="viewControllers" id="1jK-NY-o1l"/>
                         <segue destination="tPS-fU-P6u" kind="relationship" relationship="viewControllers" id="PSv-bx-zIa"/>
@@ -383,22 +386,22 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1u-18-hMo" customClass="RoundShadowView" customModule="Ski_Club" customModuleProvider="target">
-                                                    <rect key="frame" x="15" y="11" width="345" height="53"/>
+                                                    <rect key="frame" x="8" y="8" width="359" height="58.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLt-SX-CsT">
-                                                            <rect key="frame" x="12" y="8" width="293" height="19.5"/>
+                                                            <rect key="frame" x="12" y="8" width="307" height="19.5"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                             <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Get-mm-jzK">
-                                                            <rect key="frame" x="38" y="33.5" width="267" height="16"/>
+                                                            <rect key="frame" x="38" y="33.5" width="281" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                                                             <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXf-Fe-NGa">
-                                                            <rect key="frame" x="307" y="11.5" width="30" height="30"/>
+                                                            <rect key="frame" x="321" y="14.5" width="30" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="30" id="18L-zK-73W"/>
                                                                 <constraint firstAttribute="height" constant="30" id="HJL-AQ-pEv"/>
