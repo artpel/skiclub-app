@@ -63,29 +63,29 @@ class PartenairesVC: UIViewController, UICollectionViewDataSource, UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        LocalData.Partenaires.Selected.image = LocalData.Partenaires.image[indexPath.row]
-        titreView.text = LocalData.Partenaires.titre[indexPath.row]
-        changeImage(url: LocalData.Partenaires.image[indexPath.row])
-        blurView.isHidden = false
-        Haptic.impact(.light).generate()
-        tabBarController?.view.addSubview(blurView)
-        Animations.pop(viewGiven: detailView)
+//        LocalData.Partenaires.Selected.image = LocalData.Partenaires.image[indexPath.row]
+//        titreView.text = LocalData.Partenaires.titre[indexPath.row]
+//        changeImage(url: LocalData.Partenaires.image[indexPath.row])
+//        blurView.isHidden = false
+//        Haptic.impact(.light).generate()
+//        tabBarController?.view.addSubview(blurView)
+//        Animations.pop(viewGiven: detailView)
         
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 150
+        return LocalData.data["eventData"]["partenaires"].count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = partenairesCollection.dequeueReusableCell(withReuseIdentifier: "PartenairesCell", for: indexPath) as! PartenairesCell
         
-//
-//        let url = URL(string: LocalData.Partenaires.image[indexPath.row])!
-//        let processor = RoundCornerImageProcessor(cornerRadius: 50)
-//        let placeholder = UIImage(named: "partenaires_placeholder.png")
-//        cell.imagePartenaire.kf.setImage(with: url, placeholder: placeholder, options: [.processor(processor)])
-//
+
+        let url = URL(string: LocalData.data["eventData"]["partenaires"]["url"].string!)!
+        let processor = RoundCornerImageProcessor(cornerRadius: 50)
+        let placeholder = UIImage(named: "partenaires_placeholder.png")
+        cell.imagePartenaire.kf.setImage(with: url, placeholder: placeholder, options: [.processor(processor)])
+
         return cell
     }
     

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 import SwiftyJSON
 import Kingfisher
 import DeckTransition
@@ -28,11 +27,7 @@ class PratiqueVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     // TableView
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if LocalData.data == JSON.null {
-            return 0
-        } else {
-            return 3
-        }
+        return LocalData.data["eventData"]["pratique"].count
         
     }
     
@@ -44,31 +39,27 @@ class PratiqueVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         tableView.backgroundColor = UIColor.clear
         tableView.separatorStyle = .none
         
-//        // Title
-//        eventCell.firstTitle.text = LocalData.data["events"][indexPath.row]["name"].string
-//
-//        // Image
-//        let urlParsed = URL(string: LocalData.data["events"][indexPath.row]["imgUrl"].string!)
-//        let placeholder = UIImage(named: "placeholder.png")
-//        eventCell.imageTop?.kf.setImage(with: urlParsed, placeholder: placeholder)
-//
-//        // Date
-//        eventCell.dateTitle.text = LocalData.data["events"][indexPath.row]["date"].string
+        eventCell.labelPratique.text = LocalData.data["eventData"]["pratique"][indexPath.row]["nom"].string!
+        
+        // Image
+        let urlParsed = URL(string: LocalData.data["eventData"]["pratique"][indexPath.row]["img"].string!)
+        let placeholder = UIImage(named: "placeholder.png")
+        eventCell.imagePratique?.kf.setImage(with: urlParsed, placeholder: placeholder)
         
         return eventCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-//        LocalData.indexSelected = indexPath.row
-//
-//        Haptic.impact(.medium).generate()
-//
-//        let detailView = EventDetailVC()
-//        let transitionDelegate = DeckTransitioningDelegate()
-//        detailView.transitioningDelegate = transitionDelegate
-//        detailView.modalPresentationStyle = .custom
-//        present(detailView, animated: true, completion: nil)
+        LocalData.indexPratiqueSelected = indexPath.row
+
+        Haptic.impact(.medium).generate()
+
+        let detailView = PratiqueDetailVC()
+        let transitionDelegate = DeckTransitioningDelegate()
+        detailView.transitioningDelegate = transitionDelegate
+        detailView.modalPresentationStyle = .custom
+        present(detailView, animated: true, completion: nil)
         
     }
     

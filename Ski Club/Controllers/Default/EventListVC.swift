@@ -66,7 +66,7 @@ class EventListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
                 DispatchQueue.main.async(execute: {
                     self.eventList.reloadData()
                     
-                    if LocalData.data["event"] == false {
+                    if LocalData.data["event"] == true {
                         self.redirectToEvent()
                     }
                     
@@ -119,7 +119,7 @@ class EventListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        LocalData.indexSelected = indexPath.row
+        LocalData.indexEventSelected = indexPath.row
         
         Haptic.impact(.medium).generate()
         

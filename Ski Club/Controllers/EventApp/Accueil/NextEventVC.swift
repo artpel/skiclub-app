@@ -7,26 +7,17 @@
 //
 
 import UIKit
-import Firebase
-import FirebaseDatabase
 import SwiftDate
 import NVActivityIndicatorView
-import Spring
 import Kingfisher
-import ChameleonFramework
 import FontAwesome_swift
+import SwiftyJSON
 
 class NextEventVC: UIViewController {
     
-    @IBOutlet weak var timeImage: UIImageView!
     @IBOutlet weak var clockButton: UIButton!
-    
-    // Variable de référence à la Database Firebase
-    var ref: DatabaseReference?
-    
-    var nextEvents = [Int]()
-    
-    var nextDiffInMinutes = [Double]()
+
+    var nextEvents = [[String:String]]()
     
     // IB Outlets
     
@@ -38,7 +29,7 @@ class NextEventVC: UIViewController {
   
     
     override func viewDidAppear(_ animated: Bool) {
-        
+        checkDate()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -48,9 +39,6 @@ class NextEventVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Database initialisation
-        ref = Database.database().reference()
-        
         clockButton.titleLabel?.font = UIFont.fontAwesome(ofSize: 30, style: .regular)
         clockButton.setTitle(String.fontAwesomeIcon(name: .clock), for: .normal)
         
@@ -59,30 +47,50 @@ class NextEventVC: UIViewController {
     func checkDate() {
         
         self.nextEvents.removeAll()
-        self.nextDiffInMinutes.removeAll()
+        
+        var jourEvent = 0
+        
+        if Date().day == 12 {
+            jourEvent = 1
+        } else if Date().day == 13 {
+            jourEvent = 2
+        } else {
+            
+        }
         
         let paris = Region(calendar: Calendars.gregorian, zone: Zones.europeParis, locale: Locales.french)
         
-        var i = 0
-        for element in LocalData.Programme.date {
+        for (key,subJson):(String, JSON) in LocalData.data["eventData"]["programme"][jourEvent] {
             
-            let date = try! DateInRegion(element, format: "yyyy-MM-dd HH:mm:ss", region: paris)
+            let datum = subJson["dateDebut"].string!
+            
+            let date = try! DateInRegion(datum, format: "yyyy-MM-dd HH:mm:ss", region: paris)
             let dateInParis = DateInRegion(Date(), region: paris)
             
-            if dateInParis < date! {
-                self.nextEvents.append(i)
-                
-                let dateDifference = (date! - dateInParis)
-                if dateDifference == nil {
-                    
-                } else {
-                    self.nextDiffInMinutes.append(dateDifference)
-                }
+            let resultInMinutes = String(describing: dateInParis.getInterval(toDate: date, component: .minute))
+            
+            let minuti = date!.minute
+            var minutiString = String()
+            
+            if minuti == 0 {
+                minutiString = "00"
             } else {
-                
+                minutiString = String(describing: minuti)
             }
             
-            i += 1
+            let dateEtHeure = "\(String(describing: date!.hour)):\(minutiString)"
+            
+            let nextEvent = [
+                "nom": subJson["title"].string!,
+                "dateDebut": subJson["dateDebut"].string!,
+                "zone": subJson["lieu"].string!,
+                "img": subJson["img"].string!,
+                "diff": resultInMinutes,
+                "heure": dateEtHeure
+                ] as [String : String]
+            
+            self.nextEvents.append(nextEvent)
+    // Faut que je gère la fin d'évent
             
         }
         
@@ -92,33 +100,32 @@ class NextEventVC: UIViewController {
     
     func changeEvent() {
         
+        let event = nextEvents[0]
+        let diffInMinutes = Int(event["diff"]!)!
+        
         if nextEvents.count != 0 {
-            let index = nextEvents[0]
-            if nextDiffInMinutes != nil {
-                let diffInMinutes = nextDiffInMinutes[0]
-                
-                if diffInMinutes > 120 {
-                    self.timingEvent.text = "> 2h"
-                }
-                if diffInMinutes <= 120 && diffInMinutes > 60 {
-                    self.timingEvent.text = "> 1h"
-                }
-                if diffInMinutes <= 60 {
-                    self.timingEvent.text = "\(diffInMinutes) mn"
-                }
-                
-            } else {
-                self.timingEvent.text = "Go"
+            
+            
+            
+            if diffInMinutes > 120 {
+                self.timingEvent.text = "> 2h"
+            }
+            if diffInMinutes <= 120 && diffInMinutes > 60 {
+                self.timingEvent.text = "> 1h"
+            }
+            if diffInMinutes <= 60 {
+                self.timingEvent.text = "\(diffInMinutes) mn"
             }
             
             
-            let urlOk = URL(string: LocalData.Programme.image[index])
-            let placeholder = UIImage(named: "pratique_placeholder.png")
+            
+            let urlOk = URL(string: event["img"]!)
+            let placeholder = UIImage(named: "placeholder.png")
             imageEvent?.kf.setImage(with: urlOk, placeholder: placeholder)
             
-            self.nomEvent.text = LocalData.Programme.nom[index]
-            self.zoneEvent.text = LocalData.Programme.zone[index]
-            self.timeEvent.text = "À \(LocalData.Programme.heureDebut[index])"
+            self.nomEvent.text = event["nom"]
+            self.zoneEvent.text = event["zone"]
+            self.timeEvent.text = "À \(String(describing: event["heure"]!))"
             
 //            self.activityIndicator.stopAnimating()
 //            Animations.shake(viewGiven: viewNextEvent)
@@ -126,7 +133,7 @@ class NextEventVC: UIViewController {
             
             self.nomEvent.text = "Erreur, l'event est fini"
 //            self.activityIndicator.stopAnimating()
-//            
+ 
 //            Animations.shake(viewGiven: viewNextEvent)
         }
         

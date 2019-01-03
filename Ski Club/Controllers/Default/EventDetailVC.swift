@@ -28,7 +28,7 @@ class EventDetailVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
-        let indexSelected = LocalData.indexSelected
+        let indexSelected = LocalData.indexEventSelected
         setSlideshow(indexSelected: indexSelected)
         
         titleTop.text = LocalData.data["events"][indexSelected]["name"].string!
@@ -45,7 +45,7 @@ class EventDetailVC: UIViewController {
     }
     
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
-        guard let url = URL(string: LocalData.data["events"][LocalData.indexSelected]["url"].string!) else { return }
+        guard let url = URL(string: LocalData.data["events"][LocalData.indexEventSelected]["url"].string!) else { return }
         let svc = SFSafariViewController(url: url)
         present(svc, animated: true, completion: nil)
     }

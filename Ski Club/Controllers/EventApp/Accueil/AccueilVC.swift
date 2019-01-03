@@ -42,7 +42,7 @@ class AccueilVC: UIViewController {
         let defaultAction = CFAlertAction(title: "Merci",
                                           style: .Default,
                                           alignment: .right,
-                                          backgroundColor: UIColor(red: CGFloat(46.0 / 255.0), green: CGFloat(204.0 / 255.0), blue: CGFloat(113.0 / 255.0), alpha: CGFloat(1)),
+                                          backgroundColor: UIColor(hex: "#862F2A"),
                                           textColor: nil,
                                           handler: { (action) in
 

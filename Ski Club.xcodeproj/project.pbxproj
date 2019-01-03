@@ -30,6 +30,8 @@
 		76B6CF6D21DA133300071D2D /* PratiqueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B6CF6C21DA133300071D2D /* PratiqueVC.swift */; };
 		76B6CF6F21DA177C00071D2D /* PartenairesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B6CF6E21DA177C00071D2D /* PartenairesVC.swift */; };
 		76B6CF7121DA180700071D2D /* PartenairesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B6CF7021DA180700071D2D /* PartenairesCell.swift */; };
+		76B8FA3021DD2C3E00D41FAF /* PratiqueDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B8FA2F21DD2C3E00D41FAF /* PratiqueDetailVC.swift */; };
+		76F4DD7E21DC8EED00A086BB /* launchScreen_vlad.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F4DD7D21DC8EED00A086BB /* launchScreen_vlad.png */; };
 		76F8E49F21D7A94200050CE7 /* PushHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F8E49E21D7A94200050CE7 /* PushHistoryVC.swift */; };
 		76F8E4A121D7A94D00050CE7 /* NextEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F8E4A021D7A94D00050CE7 /* NextEventVC.swift */; };
 		76F8E4A321D7AE1900050CE7 /* kremlin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76F8E4A221D7AE1900050CE7 /* kremlin.ttf */; };
@@ -98,6 +100,8 @@
 		76B6CF6C21DA133300071D2D /* PratiqueVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PratiqueVC.swift; sourceTree = "<group>"; };
 		76B6CF6E21DA177C00071D2D /* PartenairesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartenairesVC.swift; sourceTree = "<group>"; };
 		76B6CF7021DA180700071D2D /* PartenairesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartenairesCell.swift; sourceTree = "<group>"; };
+		76B8FA2F21DD2C3E00D41FAF /* PratiqueDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PratiqueDetailVC.swift; sourceTree = "<group>"; };
+		76F4DD7D21DC8EED00A086BB /* launchScreen_vlad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchScreen_vlad.png; sourceTree = "<group>"; };
 		76F8E49E21D7A94200050CE7 /* PushHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushHistoryVC.swift; sourceTree = "<group>"; };
 		76F8E4A021D7A94D00050CE7 /* NextEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextEventVC.swift; sourceTree = "<group>"; };
 		76F8E4A221D7AE1900050CE7 /* kremlin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = kremlin.ttf; sourceTree = "<group>"; };
@@ -156,6 +160,7 @@
 			children = (
 				7635FCC92133F58B000ACCB1 /* Fontes */,
 				7635FCD02134084B000ACCB1 /* logoSkiClub.png */,
+				76F4DD7D21DC8EED00A086BB /* launchScreen_vlad.png */,
 				76F8E4A621D7C42800050CE7 /* logo_vlad_transp.png */,
 				767466B0213BDF1300BAA81E /* placeholder.png */,
 			);
@@ -319,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				76B6CF6C21DA133300071D2D /* PratiqueVC.swift */,
+				76B8FA2F21DD2C3E00D41FAF /* PratiqueDetailVC.swift */,
 			);
 			path = Pratique;
 			sourceTree = "<group>";
@@ -443,6 +449,7 @@
 				767466B1213BDF1400BAA81E /* placeholder.png in Resources */,
 				76F8E4A721D7C42800050CE7 /* logo_vlad_transp.png in Resources */,
 				7635FCD12134084C000ACCB1 /* logoSkiClub.png in Resources */,
+				76F4DD7E21DC8EED00A086BB /* launchScreen_vlad.png in Resources */,
 				7619121B2133C65C00DFA118 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -569,6 +576,7 @@
 				76B6CF7121DA180700071D2D /* PartenairesCell.swift in Sources */,
 				7635FCCD2133FD27000ACCB1 /* EventDetailVC.swift in Sources */,
 				76F8E4A521D7BF7F00050CE7 /* PushCell.swift in Sources */,
+				76B8FA3021DD2C3E00D41FAF /* PratiqueDetailVC.swift in Sources */,
 				7635FCC82133F4B2000ACCB1 /* RoundShadowView.swift in Sources */,
 				76FDB23E21D9536500933C21 /* PlanVC.swift in Sources */,
 				7619122E2133D17600DFA118 /* EventListVC.swift in Sources */,
