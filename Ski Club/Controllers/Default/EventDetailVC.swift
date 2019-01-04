@@ -71,5 +71,10 @@ class EventDetailVC: UIViewController {
        
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
+    
 
 }

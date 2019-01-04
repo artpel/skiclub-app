@@ -19,6 +19,9 @@ class PratiqueDetailVC: UIViewController {
     @IBOutlet weak var bottomView: RoundShadowView!
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        bottomView.isHidden = true
+        
         let indexSelected = LocalData.indexPratiqueSelected
         
         titleTop.text = LocalData.data["eventData"]["pratique"][indexSelected]["nom"].string!

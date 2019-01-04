@@ -91,7 +91,7 @@ class PushHistoryVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         
         for element in localNotifs {
             let paris = Region(calendar: Calendars.gregorian, zone: Zones.europeParis, locale: Locales.french)
-            let date = try! DateInRegion(element["date"]!, format: "yyyy-MM-dd HH:mm:ss", region: paris)
+            let date = try! DateInRegion(element["date"]!, format: "yyyy-MM-dd HH:mm", region: paris)
             let dateInParis = DateInRegion(Date(), region: paris)
             let resultInMinutes = date!.getInterval(toDate: dateInParis, component: .minute)
             

@@ -25,6 +25,7 @@ class EventListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     @IBOutlet weak var activityLoader: NVActivityIndicatorView!
     @IBOutlet weak var titleEvent: UILabel!
     @IBOutlet weak var logoSkiClub: UIImageView!
+    @IBOutlet weak var activityLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,11 +67,12 @@ class EventListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
                 DispatchQueue.main.async(execute: {
                     self.eventList.reloadData()
                     
-                    if LocalData.data["event"] == true {
+                    if LocalData.data["event"] == true { // à changer
                         self.redirectToEvent()
                     }
                     
                     self.activityLoader.stopAnimating()
+                    self.activityLabel.isHidden = true
                     self.eventList.isHidden = false
                     self.titleEvent.isHidden = false
                     self.logoSkiClub.isHidden = false

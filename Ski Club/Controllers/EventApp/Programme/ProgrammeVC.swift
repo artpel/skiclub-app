@@ -64,11 +64,15 @@ class ProgrammeVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         let placeholder = UIImage(named: "placeholder.png")
         cell.imageEvent?.kf.setImage(with: url, placeholder: placeholder)
         
-        let dateDebut = try! DateInRegion(LocalData.data["eventData"]["programme"][daySelected][indexPath.row]["dateDebut"].string!, format: "yyyy-MM-dd HH:mm:ss", region: paris)
-        let dateFin = try! DateInRegion(LocalData.data["eventData"]["programme"][daySelected][indexPath.row]["dateFin"].string!, format: "yyyy-MM-dd HH:mm:ss", region: paris)
+        let dateDebut = try! DateInRegion(LocalData.data["eventData"]["programme"][daySelected][indexPath.row]["dateDebut"].string!, format: "yyyy-MM-dd HH:mm", region: paris)
+        let dateFin = try! DateInRegion(LocalData.data["eventData"]["programme"][daySelected][indexPath.row]["dateFin"].string!, format: "yyyy-MM-dd HH:mm", region: paris)
         
-        cell.heureDebut.text = String(describing: dateDebut!.hour) + ":" + String(describing: dateDebut!.minute)
-        cell.heureFin.text = String(describing: dateFin!.hour) + ":" + String(describing: dateFin!.minute)
+        let dateEtHeureDebut = LocalData.data["eventData"]["programme"][daySelected][indexPath.row]["dateDebut"].string!.suffix(5)
+        let dateEtHeureFin = LocalData.data["eventData"]["programme"][daySelected][indexPath.row]["dateFin"].string!.suffix(5)
+        
+        
+        cell.heureDebut.text = String(describing: dateEtHeureDebut)
+        cell.heureFin.text = String(describing: dateEtHeureFin)
         
         
         

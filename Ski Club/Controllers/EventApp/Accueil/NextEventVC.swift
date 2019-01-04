@@ -58,39 +58,48 @@ class NextEventVC: UIViewController {
             
         }
         
+        let lastDay = "2019-01-14 00:00"
+        
         let paris = Region(calendar: Calendars.gregorian, zone: Zones.europeParis, locale: Locales.french)
         
         for (key,subJson):(String, JSON) in LocalData.data["eventData"]["programme"][jourEvent] {
             
             let datum = subJson["dateDebut"].string!
+            let dateEtHeure = String(describing: datum.suffix(5))
             
-            let date = try! DateInRegion(datum, format: "yyyy-MM-dd HH:mm:ss", region: paris)
+            
+            let date = try! DateInRegion(datum, format: "yyyy-MM-dd HH:mm", region: paris)
+            let derniereDate = try! DateInRegion(lastDay, format: "yyyy-MM-dd HH:mm", region: paris)
             let dateInParis = DateInRegion(Date(), region: paris)
             
-            let resultInMinutes = String(describing: dateInParis.getInterval(toDate: date, component: .minute))
-            
-            let minuti = date!.minute
-            var minutiString = String()
-            
-            if minuti == 0 {
-                minutiString = "00"
+            if dateInParis >= derniereDate! {
+                
             } else {
-                minutiString = String(describing: minuti)
+                let resultInMinutes = String(describing: dateInParis.getInterval(toDate: date, component: .minute))
+                
+                let minuti = date!.minute
+                var minutiString = String()
+                
+                if minuti == 0 {
+                    minutiString = "00"
+                } else {
+                    minutiString = String(describing: minuti)
+                }
+                
+                
+                let nextEvent = [
+                    "nom": subJson["title"].string!,
+                    "dateDebut": subJson["dateDebut"].string!,
+                    "zone": subJson["lieu"].string!,
+                    "img": subJson["img"].string!,
+                    "diff": resultInMinutes,
+                    "heure": dateEtHeure
+                    ] as [String : String]
+                
+                self.nextEvents.append(nextEvent)
             }
             
-            let dateEtHeure = "\(String(describing: date!.hour)):\(minutiString)"
             
-            let nextEvent = [
-                "nom": subJson["title"].string!,
-                "dateDebut": subJson["dateDebut"].string!,
-                "zone": subJson["lieu"].string!,
-                "img": subJson["img"].string!,
-                "diff": resultInMinutes,
-                "heure": dateEtHeure
-                ] as [String : String]
-            
-            self.nextEvents.append(nextEvent)
-    // Faut que je gère la fin d'évent
             
         }
         
@@ -100,11 +109,11 @@ class NextEventVC: UIViewController {
     
     func changeEvent() {
         
-        let event = nextEvents[0]
-        let diffInMinutes = Int(event["diff"]!)!
         
         if nextEvents.count != 0 {
             
+            let event = nextEvents[0]
+            let diffInMinutes = Int(event["diff"]!)!
             
             
             if diffInMinutes > 120 {
@@ -127,14 +136,13 @@ class NextEventVC: UIViewController {
             self.zoneEvent.text = event["zone"]
             self.timeEvent.text = "À \(String(describing: event["heure"]!))"
             
-//            self.activityIndicator.stopAnimating()
-//            Animations.shake(viewGiven: viewNextEvent)
+
         } else {
             
-            self.nomEvent.text = "Erreur, l'event est fini"
-//            self.activityIndicator.stopAnimating()
- 
-//            Animations.shake(viewGiven: viewNextEvent)
+            self.nomEvent.text = "L'event est fini"
+            self.zoneEvent.text = "Merci de votre participation !"
+            self.timeEvent.text = ""
+            self.timingEvent.text = ""
         }
         
     }

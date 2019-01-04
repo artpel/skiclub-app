@@ -116,7 +116,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                        <color key="value" red="0.81568627450980391" green="0.17254901960784313" blue="0.16078431372549021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="0.52549019610000003" green="0.1843137255" blue="0.1647058824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="string" keyPath="typeName" value="ballScaleRippleMultiple"/>
                                 </userDefinedRuntimeAttributes>
@@ -128,18 +128,28 @@
                                     <constraint firstAttribute="width" constant="131" id="h0w-r1-IBV"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chargement des données en cours..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZ1-rR-Q26">
+                                <rect key="frame" x="30" y="376" width="315" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
+                                <color key="textColor" red="0.52549019610000003" green="0.1843137255" blue="0.1647058824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="yyw-E7-OS7" firstAttribute="top" secondItem="euw-u2-3WW" secondAttribute="bottom" constant="8" id="1cU-U5-ydR"/>
+                            <constraint firstItem="nbV-lb-OfG" firstAttribute="trailing" secondItem="kZ1-rR-Q26" secondAttribute="trailing" constant="30" id="3WH-Ck-npG"/>
                             <constraint firstItem="nbV-lb-OfG" firstAttribute="trailing" secondItem="yyw-E7-OS7" secondAttribute="trailing" constant="16" id="6Bv-YK-G1g"/>
+                            <constraint firstItem="kZ1-rR-Q26" firstAttribute="centerX" secondItem="zHS-gu-syo" secondAttribute="centerX" id="6xx-Lu-VeN"/>
                             <constraint firstItem="euw-u2-3WW" firstAttribute="leading" secondItem="nbV-lb-OfG" secondAttribute="leading" constant="11" id="7we-1s-Xdf"/>
                             <constraint firstItem="OMf-6Z-NOA" firstAttribute="leading" secondItem="nbV-lb-OfG" secondAttribute="leading" id="915-g7-B1d"/>
                             <constraint firstItem="yyw-E7-OS7" firstAttribute="leading" secondItem="nbV-lb-OfG" secondAttribute="leading" constant="16" id="F8C-ot-Asj"/>
                             <constraint firstItem="Gxa-hs-iCb" firstAttribute="centerY" secondItem="zHS-gu-syo" secondAttribute="centerY" id="H9D-ok-ny2"/>
+                            <constraint firstItem="kZ1-rR-Q26" firstAttribute="leading" secondItem="nbV-lb-OfG" secondAttribute="leading" constant="30" id="MIz-bo-Ld7"/>
                             <constraint firstItem="Gxa-hs-iCb" firstAttribute="centerX" secondItem="zHS-gu-syo" secondAttribute="centerX" id="Nyb-yD-k2V"/>
                             <constraint firstItem="OMf-6Z-NOA" firstAttribute="bottom" secondItem="nbV-lb-OfG" secondAttribute="bottom" id="QhE-89-8TY"/>
                             <constraint firstItem="OMf-6Z-NOA" firstAttribute="trailing" secondItem="nbV-lb-OfG" secondAttribute="trailing" id="V8c-lO-UWk"/>
+                            <constraint firstItem="kZ1-rR-Q26" firstAttribute="top" secondItem="Gxa-hs-iCb" secondAttribute="bottom" constant="17.5" id="esn-Io-QuS"/>
                             <constraint firstItem="euw-u2-3WW" firstAttribute="top" secondItem="nbV-lb-OfG" secondAttribute="top" constant="4" id="ghW-Vt-yuQ"/>
                             <constraint firstItem="OMf-6Z-NOA" firstAttribute="top" secondItem="yyw-E7-OS7" secondAttribute="bottom" constant="17" id="w0t-q6-cr9"/>
                         </constraints>
@@ -149,6 +159,7 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
+                        <outlet property="activityLabel" destination="kZ1-rR-Q26" id="fQa-rz-KtS"/>
                         <outlet property="activityLoader" destination="Gxa-hs-iCb" id="NVU-Jk-a8w"/>
                         <outlet property="eventList" destination="OMf-6Z-NOA" id="QLN-2u-5ZL"/>
                         <outlet property="logoSkiClub" destination="euw-u2-3WW" id="19T-Hj-9FH"/>
