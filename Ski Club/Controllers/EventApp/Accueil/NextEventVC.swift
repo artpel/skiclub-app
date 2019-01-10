@@ -58,7 +58,7 @@ class NextEventVC: UIViewController {
             
         }
         
-        let lastDay = "2019-01-14 00:00"
+        let lastDay = "2019-01-15 00:00"
         
         let paris = Region(calendar: Calendars.gregorian, zone: Zones.europeParis, locale: Locales.french)
         
